@@ -59,12 +59,18 @@ function TradesIndex() {
                     />
                     <div className="p-5">
                       <p className="font-display text-lg">{t.name}</p>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        Starts around{" "}
-                        <span className="font-display text-base text-[var(--gold)]">
-                          {money(t.wages.start)}
-                        </span>
-                      </p>
+                      {t.wagesVerified === false ? (
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          Wage figures being verified
+                        </p>
+                      ) : (
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          Starts around{" "}
+                          <span className="font-display text-base text-[var(--gold)]">
+                            {money(t.wages.start)}
+                          </span>
+                        </p>
+                      )}
                     </div>
                   </Link>
                 );

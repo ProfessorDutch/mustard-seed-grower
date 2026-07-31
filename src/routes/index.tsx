@@ -187,16 +187,17 @@ function Home() {
 
 
       {/* 3 · One trade, shown completely */}
-      <section className="bg-background">
+      <section id="one-trade" className="scroll-mt-16 bg-background">
         <img
           src={electrical.image}
           alt="An electrician pulling wire in an unfinished building"
           width={1536}
           height={1024}
           loading="lazy"
-          className="h-[45vh] w-full object-cover md:h-[60vh]"
+          className="h-[38vh] w-full object-cover sm:h-[45vh] md:h-[60vh]"
         />
-        <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-6 md:py-28">
+
           <p className="eyebrow text-muted-foreground">Here's one of them.</p>
           <h2 className="display-lg mt-3">Electrical</h2>
           <p className="mt-8 max-w-2xl lede">{electrical.whatItIs}</p>
@@ -214,18 +215,21 @@ function Home() {
             are paid from the first day of it.
           </p>
 
-          <div className="mt-16 border-t border-border pt-10">
-            <p className="text-sm text-muted-foreground">
-              Photograph, first name, age, and one sentence in their own words — to be supplied.
-            </p>
+          <div className="mt-14 grid gap-3 sm:grid-cols-2">
+            <Link
+              to="/trades"
+              className="inline-flex items-center justify-between gap-3 rounded-sm bg-soil px-6 py-5 font-display text-xl text-soil-foreground transition-opacity hover:opacity-90"
+            >
+              There are twenty-three more <span className="text-gold">→</span>
+            </Link>
+            <Link
+              to="/start"
+              className="inline-flex items-center justify-between gap-3 rounded-sm border border-border px-6 py-5 font-display text-xl transition-colors hover:border-gold"
+            >
+              Get started <span className="text-gold">→</span>
+            </Link>
           </div>
 
-          <Link
-            to="/trades"
-            className="mt-12 inline-flex items-center gap-3 font-display text-2xl underline-offset-8 hover:underline"
-          >
-            There are twenty-three more <span className="text-gold">→</span>
-          </Link>
         </div>
       </section>
 

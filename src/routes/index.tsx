@@ -4,6 +4,11 @@ import dutchImg from "@/assets/dutch.jpg";
 import mentorshipImg from "@/assets/mentorship.jpg";
 import businessImg from "@/assets/business-owner.jpg";
 import churchImg from "@/assets/church.jpg";
+import electricalImg from "@/assets/trade-electrical.jpg";
+import hvacImg from "@/assets/trade-hvac.jpg";
+import weldingImg from "@/assets/trade-welding.jpg";
+import roofingImg from "@/assets/trade-roofing.jpg";
+
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WageBlock } from "@/components/site/WageBlock";

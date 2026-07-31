@@ -113,7 +113,7 @@ export const trades: Trade[] = [
       "Comfort in crawl spaces, attics, and unfinished buildings in every kind of weather.",
     ],
     becomes:
-      "Journeyman, then master electrician, then your own license and your own trucks. Industrial and controls work pays higher than residential and most people never find that out.\n\n---",
+      "Journeyman, then master electrician, then your own license and your own trucks. Industrial and controls work pays higher than residential and most people never find that out.",
     related: ["solar-renewable-energy", "fire-security-systems", "telecommunications-cabling"],
   },
   {
@@ -134,7 +134,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 37000, median: 59810, experienced: 94000 },
     socCode: "49-9021",
-    wageNote: "U.S. Bureau of Labor Statistics, OEWS, [year] (national). Georgia figures to be added. SOC 49-9021 (HVACR). Plumbing tracks separately under SOC 47-2152 \u2014 consider showing both.",
+    wageNote: "HVACR technicians are SOC 49-9021; plumbers track separately under SOC 47-2152. The figures above are the HVACR occupation.",
     howYouGetIn: [
       "Six months to two years of trade school, or a paid apprenticeship.",
       "EPA 608 certification is required to touch refrigerant. It's a test, not a degree.",
@@ -147,7 +147,7 @@ export const trades: Trade[] = [
       "You'll talk to customers on their worst day. Patience counts as a skill here.",
     ],
     becomes:
-      "Lead tech, then service manager, then owner. Home service is the most common trade to end in your own business.\n\n---",
+      "Lead tech, then service manager, then owner. Home service is the most common trade to end in your own business.",
     related: ["commercial-refrigeration", "electrical", "appliance-repair"],
   },
   {
@@ -168,7 +168,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 40000, median: 61000, experienced: 98000 },
     socCode: "49-9021",
-    wageNote: "SOC 49-9021 covers HVACR together \u2014 commercial refrigeration is not broken out separately by BLS. Print the HVACR figure and say so plainly, or source refrigeration-specific pay from Georgia employers.",
+    wageNote: "BLS does not break commercial refrigeration out on its own — it sits inside SOC 49-9021 with HVAC. The figures above are that combined occupation; refrigeration-specific pay generally runs higher.",
     howYouGetIn: [
       "Start in HVAC, then specialize. Almost nobody enters refrigeration first.",
       "EPA 608 Type II and Universal are the certifications that matter here.",
@@ -181,7 +181,7 @@ export const trades: Trade[] = [
       "Precision \u2014 refrigeration is less forgiving than comfort cooling.",
     ],
     becomes:
-      "One of the highest-paid service trades, and one of the shortest-staffed. Techs with rack refrigeration experience write their own ticket.\n\n---",
+      "One of the highest-paid service trades, and one of the shortest-staffed. Techs with rack refrigeration experience write their own ticket.",
     related: ["hvac-plumbing", "appliance-repair", "electrical"],
   },
   {
@@ -214,7 +214,7 @@ export const trades: Trade[] = [
       "The wait to get in can be long. Getting in is the hard part; staying is not.",
     ],
     becomes:
-      "Mechanic, then adjuster, then supervisor. Adjusters are the specialists who make a bank of elevators run right, and they are paid accordingly.\n\n---",
+      "Mechanic, then adjuster, then supervisor. Adjusters are the specialists who make a bank of elevators run right, and they are paid accordingly.",
     related: ["electrical", "fire-security-systems", "welding-fabrication"],
   },
   {
@@ -247,7 +247,7 @@ export const trades: Trade[] = [
       "A clean background \u2014 you'll be in banks, schools, and hospitals.",
     ],
     becomes:
-      "NICET III and IV inspectors, then project management or your own low voltage company. Access control and networked systems pay above straight alarm work.\n\n---",
+      "NICET III and IV inspectors, then project management or your own low voltage company. Access control and networked systems pay above straight alarm work.",
     related: ["electrical", "telecommunications-cabling", "elevator-repair"],
   },
   {
@@ -280,7 +280,7 @@ export const trades: Trade[] = [
       "Reliable transportation before a company van is handed to you.",
     ],
     becomes:
-      "The lowest barrier to owning your own business of any trade on this list. One van, one phone, and a reputation.\n\n---",
+      "The lowest barrier to owning your own business of any trade on this list. One van, one phone, and a reputation.",
     related: ["hvac-plumbing", "commercial-refrigeration", "electrical"],
   },
   {
@@ -313,7 +313,7 @@ export const trades: Trade[] = [
       "Showing up on time, every day, matters more here than talent.",
     ],
     becomes:
-      "Lead carpenter, then foreman, then superintendent or your own crew. Finish carpentry and cabinetmaking pay more and beat up your body less.\n\n---",
+      "Lead carpenter, then foreman, then superintendent or your own crew. Finish carpentry and cabinetmaking pay more and beat up your body less.",
     related: ["roofing", "masonry-concrete", "window-door-installation"],
   },
   {
@@ -346,7 +346,7 @@ export const trades: Trade[] = [
       "Eyes and lungs are the things you protect. Take that seriously from day one.",
     ],
     becomes:
-      "Certified pipe welder, then rig welder, inspector, or your own fab shop. Traveling pipeline and industrial shutdown work pays multiples of shop rate.\n\n---",
+      "Certified pipe welder, then rig welder, inspector, or your own fab shop. Traveling pipeline and industrial shutdown work pays multiples of shop rate.",
     related: ["masonry-concrete", "heavy-equipment-operation", "construction-carpentry"],
   },
   {
@@ -379,7 +379,7 @@ export const trades: Trade[] = [
       "An eye for straight. You either develop it or you don't stay.",
     ],
     becomes:
-      "Foreman, then your own crew. Restoration and historic masonry is specialized, well paid, and there are almost no young people in it.\n\n---",
+      "Foreman, then your own crew. Restoration and historic masonry is specialized, well paid, and there are almost no young people in it.",
     related: ["construction-carpentry", "heavy-equipment-operation", "welding-fabrication"],
   },
   {
@@ -412,7 +412,7 @@ export const trades: Trade[] = [
       "Speed comes later. Do it right first.",
     ],
     becomes:
-      "Crew lead, then production manager, then your own company. Roofing companies sell \u2014 the ones built properly sell for real money.\n\n---",
+      "Crew lead, then production manager, then your own company. Roofing companies sell \u2014 the ones built properly sell for real money.",
     related: ["construction-carpentry", "insulation", "window-door-installation"],
   },
   {
@@ -445,7 +445,7 @@ export const trades: Trade[] = [
       "Comfort talking to homeowners, because you're in their house all day.",
     ],
     becomes:
-      "Lead installer, then commercial glazing, then your own install company. Storefront and curtain wall is the high end.\n\n---",
+      "Lead installer, then commercial glazing, then your own install company. Storefront and curtain wall is the high end.",
     related: ["construction-carpentry", "flooring-tile", "painting-drywall"],
   },
   {
@@ -478,7 +478,7 @@ export const trades: Trade[] = [
       "An eye for detail that borders on irritating.",
     ],
     becomes:
-      "Independent setter almost immediately. Custom stone, large-format, and waterproofing work commands premium rates and there are not enough people doing it.\n\n---",
+      "Independent setter almost immediately. Custom stone, large-format, and waterproofing work commands premium rates and there are not enough people doing it.",
     related: ["painting-drywall", "window-door-installation", "construction-carpentry"],
   },
   {
@@ -511,7 +511,7 @@ export const trades: Trade[] = [
       "Steadiness \u2014 cut lines are done freehand and everybody sees them.",
     ],
     becomes:
-      "Crew lead, then your own painting company \u2014 one of the fastest businesses on this list to start. Industrial coatings and specialty finishes are the high end.\n\n---",
+      "Crew lead, then your own painting company \u2014 one of the fastest businesses on this list to start. Industrial coatings and specialty finishes are the high end.",
     related: ["flooring-tile", "insulation", "construction-carpentry"],
   },
   {
@@ -544,7 +544,7 @@ export const trades: Trade[] = [
       "Steady pace over speed.",
     ],
     becomes:
-      "Foam crew lead, then energy auditing and building performance, then your own insulation company. Mechanical insulation on industrial sites is the highest-paid path.\n\n---",
+      "Foam crew lead, then energy auditing and building performance, then your own insulation company. Mechanical insulation on industrial sites is the highest-paid path.",
     related: ["roofing", "painting-drywall", "hvac-plumbing"],
   },
   {
@@ -565,6 +565,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 34000, median: 46000, experienced: 70000 },
     socCode: "49-9096",
+    wageNote: "There is no clean SOC code for sign work. BLS scatters it across SOC 47-4099, Construction and Related Workers, All Other, plus electrical and sheet metal codes. The figures above are 47-4099.",
     howYouGetIn: [
       "On-the-job with a sign company. Almost nobody trains for this in advance.",
       "Aerial lift and crane certifications, plus a CDL for larger installs, raise your pay fast.",
@@ -577,7 +578,7 @@ export const trades: Trade[] = [
       "Travel \u2014 installs go where the customers are.",
     ],
     becomes:
-      "Lead installer, then service manager, then your own sign company. Sign service and maintenance contracts are steady recurring money.\n\n---",
+      "Lead installer, then service manager, then your own sign company. Sign service and maintenance contracts are steady recurring money.",
     related: ["welding-fabrication", "electrical", "fire-security-systems"],
   },
   {
@@ -610,7 +611,7 @@ export const trades: Trade[] = [
       "Clean driving record for road tests and fleet work.",
     ],
     becomes:
-      "Master tech, then shop foreman, then service manager or your own shop. Diesel, fleet, and heavy equipment are where the money is and where the shortage is worst.\n\n---",
+      "Master tech, then shop foreman, then service manager or your own shop. Diesel, fleet, and heavy equipment are where the money is and where the shortage is worst.",
     related: ["heavy-equipment-operation", "aviation-maintenance", "appliance-repair"],
   },
   {
@@ -643,7 +644,7 @@ export const trades: Trade[] = [
       "Awareness \u2014 people work on the ground around a machine that can't see them.",
     ],
     becomes:
-      "Operator, then grade foreman, then superintendent. Crane operation is a separate certification and one of the highest-paid seats on any job site.\n\n---",
+      "Operator, then grade foreman, then superintendent. Crane operation is a separate certification and one of the highest-paid seats on any job site.",
     related: ["masonry-concrete", "automotive-diesel", "construction-carpentry"],
   },
   {
@@ -676,7 +677,7 @@ export const trades: Trade[] = [
       "Shift work. Aircraft get maintained at night because they fly during the day.",
     ],
     becomes:
-      "A&P, then Inspection Authorization, then lead, then avionics or powerplant specialization. Airlines, corporate flight departments, and Delta's Atlanta operation all hire here.\n\n---",
+      "A&P, then Inspection Authorization, then lead, then avionics or powerplant specialization. Airlines, corporate flight departments, and Delta's Atlanta operation all hire here.",
     related: ["automotive-diesel", "welding-fabrication", "electrical"],
   },
   {
@@ -709,7 +710,7 @@ export const trades: Trade[] = [
       "The industry moves with policy and incentives. Companies come and go; the skill doesn't.",
     ],
     becomes:
-      "Lead installer, then commissioning and service, then electrical licensure and utility-scale or storage work. Battery storage is the fastest-growing corner of it.\n\n---",
+      "Lead installer, then commissioning and service, then electrical licensure and utility-scale or storage work. Battery storage is the fastest-growing corner of it.",
     related: ["electrical", "roofing", "telecommunications-cabling"],
   },
   {
@@ -742,7 +743,7 @@ export const trades: Trade[] = [
       "Travel on some jobs, especially cell site and outside plant work.",
     ],
     becomes:
-      "Lead tech, then fiber splicer or data center infrastructure specialist, then project management. Georgia's data center growth means this trade is not going quiet.\n\n---",
+      "Lead tech, then fiber splicer or data center infrastructure specialist, then project management. Georgia's data center growth means this trade is not going quiet.",
     related: ["electrical", "fire-security-systems", "solar-renewable-energy"],
   },
   {
@@ -775,7 +776,7 @@ export const trades: Trade[] = [
       "The willingness to move past maintenance. The people who stay on a mower stay at mower pay.",
     ],
     becomes:
-      "Crew lead, then irrigation tech, then design-build or your own company. Landscape companies are among the most commonly bought and sold small businesses in Georgia.\n\n---",
+      "Crew lead, then irrigation tech, then design-build or your own company. Landscape companies are among the most commonly bought and sold small businesses in Georgia.",
     related: ["pool-spa-service", "masonry-concrete", "pest-control"],
   },
   {
@@ -796,7 +797,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 31000, median: 45000, experienced: 68000 },
     socCode: "49-9071",
-    wageNote: "No clean SOC code \u2014 BLS most often captures this under SOC 49-9071 (Maintenance and Repair Workers, General). Print that with a note, or source Georgia pool service pay directly from employers and cite them.",
+    wageNote: "There is no clean SOC code for pool and spa work. BLS most often captures it under SOC 49-9071, Maintenance and Repair Workers, General. That is the occupation printed above.",
     howYouGetIn: [
       "Hired with no experience and trained on a route. Very open door.",
       "CPO \u2014 Certified Pool Operator \u2014 is a two-day course and it is the credential that matters.",
@@ -809,7 +810,7 @@ export const trades: Trade[] = [
       "Route reliability. Customers notice a missed week immediately.",
     ],
     becomes:
-      "Service tech, then repair and renovation specialist, then your own route. Pool routes are bought and sold as assets \u2014 you can own income here early.\n\n---",
+      "Service tech, then repair and renovation specialist, then your own route. Pool routes are bought and sold as assets \u2014 you can own income here early.",
     related: ["landscaping-irrigation", "hvac-plumbing", "electrical"],
   },
   {
@@ -842,7 +843,7 @@ export const trades: Trade[] = [
       "People skills \u2014 you're in homes and businesses all day and half the job is explaining.",
     ],
     becomes:
-      "Route manager, then branch manager, then your own company. Pest control companies sell on recurring contract value and they sell well.\n\n---",
+      "Route manager, then branch manager, then your own company. Pest control companies sell on recurring contract value and they sell well.",
     related: ["landscaping-irrigation", "insulation", "appliance-repair"],
   },
   {
@@ -875,7 +876,7 @@ export const trades: Trade[] = [
       "On-call hours \u2014 lockouts do not happen at convenient times.",
     ],
     becomes:
-      "Independent locksmith with a van, quickly. Commercial access control and institutional master keying are the high end, and electronic access is where the trade is going.\n\n---",
+      "Independent locksmith with a van, quickly. Commercial access control and institutional master keying are the high end, and electronic access is where the trade is going.",
     related: ["fire-security-systems", "appliance-repair", "telecommunications-cabling"],
   },
 ];

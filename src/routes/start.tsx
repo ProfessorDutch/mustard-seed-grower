@@ -102,7 +102,12 @@ function StartPage() {
               <p className="mt-5 lede">{trade.whatItIs}</p>
 
               <div className="mt-10">
-                <WageBlock wages={trade.wages} socCode={trade.socCode} />
+                <WageBlock
+                  wages={trade.wages}
+                  socCode={trade.socCode}
+                  note={trade.wageNote}
+                  verified={trade.wagesVerified !== false}
+                />
               </div>
 
               <div className="mt-10">

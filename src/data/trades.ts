@@ -12,7 +12,7 @@ import landscaping from "@/assets/trade-landscaping.jpg";
 import heavyEquipment from "@/assets/trade-heavy-equipment.jpg";
 
 export const WAGE_SOURCE =
-  "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2024 (national). Georgia figures to be added alongside national.";
+  "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2024 (national). Starting out = 10th percentile. Median = 50th. Experienced = 90th. Annual. Georgia figures to be added alongside national.";
 
 export type Person = {
   name: string;
@@ -33,6 +33,8 @@ export type Trade = {
   socCode: string;
   /** Shown instead of the standard BLS note when the SOC mapping is not clean. */
   wageNote?: string;
+  /** False until the figures are checked against the published OEWS May 2024 release. */
+  wagesVerified?: boolean;
   /** The actual path in. */
   howYouGetIn: string[];
   /** Honest requirements. Say the hard parts. */
@@ -99,8 +101,9 @@ export const trades: Trade[] = [
       "Find it in the panel \u2014 a loose neutral on a shared circuit.",
       "Torque it down, test it, done in forty minutes.",
     ],
-    wages: { start: 39000, median: 62350, experienced: 104000 },
+    wages: { start: 39430, median: 62350, experienced: 106030 },
     socCode: "47-2111",
+    wagesVerified: true,
     howYouGetIn: [
       "A four-year apprenticeship. You are paid from the first day and your pay steps up every year.",
       "Or trade school first, then apprentice with credit for what you finished.",
@@ -134,6 +137,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 37000, median: 59810, experienced: 94000 },
     socCode: "49-9021",
+    wagesVerified: false,
     wageNote: "HVACR technicians are SOC 49-9021; plumbers track separately under SOC 47-2152. The figures above are the HVACR occupation.",
     howYouGetIn: [
       "Six months to two years of trade school, or a paid apprenticeship.",
@@ -168,6 +172,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 40000, median: 61000, experienced: 98000 },
     socCode: "49-9021",
+    wagesVerified: false,
     wageNote: "BLS does not break commercial refrigeration out on its own — it sits inside SOC 49-9021 with HVAC. The figures above are that combined occupation; refrigeration-specific pay generally runs higher.",
     howYouGetIn: [
       "Start in HVAC, then specialize. Almost nobody enters refrigeration first.",
@@ -202,6 +207,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 55000, median: 106580, experienced: 145000 },
     socCode: "47-4021",
+    wagesVerified: false,
     howYouGetIn: [
       "A four-year apprenticeship, almost always through IUEC. You are paid throughout.",
       "Entry is competitive and comes through an aptitude test and interview.",
@@ -235,6 +241,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 38000, median: 59000, experienced: 88000 },
     socCode: "49-2098",
+    wagesVerified: false,
     howYouGetIn: [
       "On-the-job training with a low voltage contractor. Many hire with no experience.",
       "NICET certification is the credential that moves your pay, in levels.",
@@ -268,6 +275,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 33000, median: 46000, experienced: 72000 },
     socCode: "49-9031",
+    wagesVerified: false,
     howYouGetIn: [
       "Short training, six months to a year, or straight on-the-job with a service company.",
       "Manufacturer certifications \u2014 Whirlpool, GE, LG, Samsung \u2014 raise your rate.",
@@ -299,8 +307,9 @@ export const trades: Trade[] = [
       "Foreman checks the plumb on the corners before we leave.",
       "Tomorrow is the second floor.",
     ],
-    wages: { start: 37000, median: 59000, experienced: 91000 },
+    wages: { start: 38760, median: 59310, experienced: 98370 },
     socCode: "47-2031",
+    wagesVerified: true,
     howYouGetIn: [
       "Hired as a laborer or helper with no experience. This is the most open door on the list.",
       "Three-to-four-year apprenticeships exist and pay better long-term than picking it up on site.",
@@ -334,6 +343,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 36000, median: 52830, experienced: 79000 },
     socCode: "51-4121",
+    wagesVerified: false,
     howYouGetIn: [
       "Six months to two years at a technical college, or a shop that trains you.",
       "The certification is what pays \u2014 AWS structural, then 6G pipe. Each one moves your number.",
@@ -365,8 +375,11 @@ export const trades: Trade[] = [
       "Flatwork crew is pouring next door and they'll finish long after dark if they have to.",
       "Clean the tools. Always clean the tools.",
     ],
-    wages: { start: 36000, median: 54000, experienced: 82000 },
-    socCode: "47-2051",
+    wages: { start: 41330, median: 60800, experienced: 95560 },
+    socCode: "47-2021",
+    wagesVerified: true,
+    wageNote:
+      "Two occupations feed this trade. The figures above are brickmasons and blockmasons (SOC 47-2021). Cement masons and concrete finishers (SOC 47-2051) run $38,290 starting out, $54,660 median, $87,620 experienced.",
     howYouGetIn: [
       "Start as a laborer or a tender. Almost everyone does.",
       "Three-to-four-year apprenticeships through the union pay from day one.",
@@ -400,6 +413,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 34000, median: 50030, experienced: 77000 },
     socCode: "47-2181",
+    wagesVerified: false,
     howYouGetIn: [
       "Hired with no experience, trained on the roof. Nearly every roofer in Georgia started this way.",
       "Manufacturer certifications \u2014 GAF, Owens Corning \u2014 matter once you're running work.",
@@ -431,8 +445,11 @@ export const trades: Trade[] = [
       "Doors are unforgiving \u2014 a sixteenth out and it won't latch right.",
       "Homeowner opens and closes it four times before they believe it.",
     ],
-    wages: { start: 34000, median: 49000, experienced: 74000 },
-    socCode: "47-2031",
+    wages: { start: 37710, median: 55440, experienced: 98780 },
+    socCode: "47-2121",
+    wagesVerified: true,
+    wageNote:
+      "The closest clean code is glaziers (SOC 47-2121). Window and door installation work sits across that code and carpentry.",
     howYouGetIn: [
       "On-the-job with a replacement company or a glass contractor. No school required.",
       "Commercial glazing runs a three-to-four-year paid apprenticeship.",
@@ -464,8 +481,11 @@ export const trades: Trade[] = [
       "Let it set overnight. Grout tomorrow.",
       "Homeowner walks in and says nothing about the layout. That means it's right.",
     ],
-    wages: { start: 33000, median: 49000, experienced: 76000 },
+    wages: { start: 36140, median: 52240, experienced: 82960 },
     socCode: "47-2044",
+    wagesVerified: true,
+    wageNote:
+      "The figures above are tile and stone setters (SOC 47-2044). Floor layers (SOC 47-2042) run $37,190 starting out, $54,340 median, $97,180 experienced.",
     howYouGetIn: [
       "Helper first, mixing and cutting for a setter. That is the apprenticeship in practice.",
       "Formal three-year apprenticeships exist through the union.",
@@ -497,8 +517,11 @@ export const trades: Trade[] = [
       "Cut lines are where a painter's reputation lives.",
       "Clean the brushes properly or buy new ones every month.",
     ],
-    wages: { start: 32000, median: 48000, experienced: 71000 },
-    socCode: "47-2141",
+    wages: { start: 37810, median: 58140, experienced: 101380 },
+    socCode: "47-2081",
+    wagesVerified: true,
+    wageNote:
+      "The figures above are drywall and ceiling tile installers (SOC 47-2081). Painters, construction and maintenance (SOC 47-2141) are a separate code and those figures are still being verified. We will print them when they are checked.",
     howYouGetIn: [
       "Hired with no experience. Along with carpentry, the most open door on this list.",
       "Level 5 finishing and spray application are the skills that separate pay grades.",
@@ -532,6 +555,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 33000, median: 49000, experienced: 73000 },
     socCode: "47-2131",
+    wagesVerified: false,
     howYouGetIn: [
       "Hired and trained on the crew. No school required to start.",
       "SPFA certification for spray foam is the credential that changes your pay.",
@@ -565,6 +589,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 34000, median: 46000, experienced: 70000 },
     socCode: "49-9096",
+    wagesVerified: false,
     wageNote: "There is no clean SOC code for sign work. BLS scatters it across SOC 47-4099, Construction and Related Workers, All Other, plus electrical and sheet metal codes. The figures above are 47-4099.",
     howYouGetIn: [
       "On-the-job with a sign company. Almost nobody trains for this in advance.",
@@ -599,6 +624,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 34000, median: 49670, experienced: 79000 },
     socCode: "49-3023",
+    wagesVerified: false,
     howYouGetIn: [
       "One to two years at a technical college, or hired as a lube tech and moved up.",
       "ASE certifications are the currency. Each one moves your pay.",
@@ -630,8 +656,9 @@ export const trades: Trade[] = [
       "Afternoon is loading trucks. Rhythm matters \u2014 the crew works off your pace.",
       "Fuel and shut down. Report anything that felt wrong to the mechanic.",
     ],
-    wages: { start: 38000, median: 59000, experienced: 90000 },
+    wages: { start: 40080, median: 58710, experienced: 100690 },
     socCode: "47-2073",
+    wagesVerified: true,
     howYouGetIn: [
       "Start as a laborer or ground man on a site and get seat time when it's offered.",
       "Three-to-four-year paid apprenticeships through the operating engineers.",
@@ -665,6 +692,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 45000, median: 79140, experienced: 112000 },
     socCode: "49-3011",
+    wagesVerified: false,
     howYouGetIn: [
       "An FAA-approved A&P program, eighteen months to two years.",
       "Or 30 months of documented experience under a certificated mechanic, then the exams.",
@@ -698,6 +726,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 36000, median: 51860, experienced: 76000 },
     socCode: "47-2231",
+    wagesVerified: false,
     howYouGetIn: [
       "Hired and trained on the crew. Most installers start with no experience.",
       "NABCEP certification is the industry credential and it moves your pay.",
@@ -731,6 +760,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 36000, median: 61000, experienced: 92000 },
     socCode: "49-9052",
+    wagesVerified: false,
     howYouGetIn: [
       "Hired as a helper with no experience. Very open door.",
       "BICSI and fiber certifications are what move you up, and they are short courses.",
@@ -762,8 +792,11 @@ export const trades: Trade[] = [
       "Set the controller and walk every head to check coverage.",
       "Trailer cleaned out before it goes back in the yard.",
     ],
-    wages: { start: 30000, median: 38000, experienced: 60000 },
+    wages: { start: 29990, median: 38090, experienced: 53900 },
     socCode: "37-3011",
+    wagesVerified: true,
+    wageNote:
+      "The figures above are landscaping and groundskeeping workers (SOC 37-3011) — where you start. First-line supervisors of landscaping crews (SOC 37-1012) run $39,270 starting out, $56,170 median, $83,080 experienced. That step is the whole point.",
     howYouGetIn: [
       "Hired immediately with no experience, anywhere in Georgia.",
       "Irrigation is where the pay changes. Georgia requires a contractor license for irrigation work.",
@@ -797,6 +830,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 31000, median: 45000, experienced: 68000 },
     socCode: "49-9071",
+    wagesVerified: false,
     wageNote: "There is no clean SOC code for pool and spa work. BLS most often captures it under SOC 49-9071, Maintenance and Repair Workers, General. That is the occupation printed above.",
     howYouGetIn: [
       "Hired with no experience and trained on a route. Very open door.",
@@ -829,8 +863,9 @@ export const trades: Trade[] = [
       "Roach service in a restaurant is done right or done again next week.",
       "Every stop gets a report the customer can read.",
     ],
-    wages: { start: 32000, median: 45000, experienced: 66000 },
+    wages: { start: 32460, median: 44730, experienced: 61410 },
     socCode: "37-2021",
+    wagesVerified: true,
     howYouGetIn: [
       "Hired with no experience. Companies train you and pay for your licensing.",
       "Georgia requires registration and then certification through the Department of Agriculture.",
@@ -864,6 +899,7 @@ export const trades: Trade[] = [
     ],
     wages: { start: 32000, median: 48000, experienced: 71000 },
     socCode: "49-9094",
+    wagesVerified: false,
     howYouGetIn: [
       "Apprentice with a working locksmith. This trade still runs mostly on that.",
       "ALOA training and certification is the recognized credential.",

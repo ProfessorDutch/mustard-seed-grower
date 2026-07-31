@@ -136,7 +136,7 @@ function TradePage() {
         <section className="mt-16">
           <h2 className="display-md">What it pays</h2>
           <div className="mt-6">
-            <WageBlock wages={t.wages} socCode={t.socCode} />
+            <WageBlock wages={t.wages} socCode={t.socCode} note={t.wageNote} />
           </div>
         </section>
 

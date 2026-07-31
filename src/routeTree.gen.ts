@@ -10,12 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AmbassadorsRouteImport } from './routes/ambassadors'
+import { Route as GiveRouteImport } from './routes/give'
 import { Route as StartRouteImport } from './routes/start'
 import { Route as TradesIndexRouteImport } from './routes/trades.index'
+import { Route as TradesTradeRouteImport } from './routes/trades.$trade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbassadorsRoute = AmbassadorsRouteImport.update({
+  id: '/ambassadors',
+  path: '/ambassadors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiveRoute = GiveRouteImport.update({
+  id: '/give',
+  path: '/give',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StartRoute = StartRouteImport.update({
@@ -28,34 +41,59 @@ const TradesIndexRoute = TradesIndexRouteImport.update({
   path: '/trades/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TradesTradeRoute = TradesTradeRouteImport.update({
+  id: '/trades/$trade',
+  path: '/trades/$trade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ambassadors': typeof AmbassadorsRoute
+  '/give': typeof GiveRoute
   '/start': typeof StartRoute
+  '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ambassadors': typeof AmbassadorsRoute
+  '/give': typeof GiveRoute
   '/start': typeof StartRoute
+  '/trades/$trade': typeof TradesTradeRoute
   '/trades': typeof TradesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ambassadors': typeof AmbassadorsRoute
+  '/give': typeof GiveRoute
   '/start': typeof StartRoute
+  '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/start' | '/trades/'
+  fullPaths:
+    '/' | '/ambassadors' | '/give' | '/start' | '/trades/$trade' | '/trades/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/start' | '/trades'
-  id: '__root__' | '/' | '/start' | '/trades/'
+  to: '/' | '/ambassadors' | '/give' | '/start' | '/trades/$trade' | '/trades'
+  id:
+    | '__root__'
+    | '/'
+    | '/ambassadors'
+    | '/give'
+    | '/start'
+    | '/trades/$trade'
+    | '/trades/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmbassadorsRoute: typeof AmbassadorsRoute
+  GiveRoute: typeof GiveRoute
   StartRoute: typeof StartRoute
+  TradesTradeRoute: typeof TradesTradeRoute
   TradesIndexRoute: typeof TradesIndexRoute
 }
 
@@ -66,6 +104,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambassadors': {
+      id: '/ambassadors'
+      path: '/ambassadors'
+      fullPath: '/ambassadors'
+      preLoaderRoute: typeof AmbassadorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/give': {
+      id: '/give'
+      path: '/give'
+      fullPath: '/give'
+      preLoaderRoute: typeof GiveRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/start': {
@@ -82,12 +134,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trades/$trade': {
+      id: '/trades/$trade'
+      path: '/trades/$trade'
+      fullPath: '/trades/$trade'
+      preLoaderRoute: typeof TradesTradeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmbassadorsRoute: AmbassadorsRoute,
+  GiveRoute: GiveRoute,
   StartRoute: StartRoute,
+  TradesTradeRoute: TradesTradeRoute,
   TradesIndexRoute: TradesIndexRoute,
 }
 export const routeTree = rootRouteImport

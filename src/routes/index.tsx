@@ -328,38 +328,104 @@ function Home() {
         </div>
       </section>
 
-      {/* 6 · The loop */}
+      {/* 6 · The Genesis Moment */}
       <section className="bg-forest text-forest-foreground">
-        <div className="mx-auto max-w-5xl px-6 py-24 md:py-28">
-          <h2 className="display-md">It comes back around.</h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                title: "The Genesis Moment",
-                body: "A podcast about home service business owners and the people who believed in them first. The stories bring in the mentors, the partners, and the people who fund this.",
-              },
-              {
-                title: "MeetEmmy",
-                body: "Businesses donate to The Mustard Seed directly out of their customer reviews. Every review becomes a seed planted.",
-              },
-              {
-                title: "The Mustard Seed",
-                body: "Scholarships, mentorship, and a way into the trades for a kid who didn't have one.",
-              },
-            ].map((p, i) => (
-              <div key={p.title} className="border-t border-forest-foreground/25 pt-5">
-                <p className="eyebrow text-gold">0{i + 1}</p>
-                <p className="mt-3 font-display text-xl">{p.title}</p>
-                <p className="mt-3 text-sm leading-relaxed text-forest-foreground/80">{p.body}</p>
-              </div>
-            ))}
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-2 md:items-center md:gap-12 md:py-28">
+          <div>
+            <p className="eyebrow text-gold">The Genesis Moment</p>
+            <h2 className="display-lg mt-3">Somebody bet on him first.</h2>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-forest-foreground/85">
+              <p>
+                Every trades business in America has a person behind it that nobody names. The guy
+                who handed over a truck. The boss who kept him on through six useless months. The
+                uncle who co-signed.
+              </p>
+              <p>
+                The story that gets told is the one about grit. It is almost never the whole truth.
+              </p>
+              <p>
+                The Genesis Moment is a podcast that goes and gets the rest of it — home service
+                business owners, on the record, about the person who believed in them before they
+                had earned it.
+              </p>
+            </div>
+            <p className="mt-7 font-display text-2xl leading-snug">
+              Fifty of those is not a podcast. <span className="text-gold">It's proof.</span>
+            </p>
+            <Link
+              to="/the-genesis-moment"
+              className="mt-8 inline-flex items-center gap-3 rounded-sm bg-gold px-7 py-4 font-display text-lg text-gold-foreground transition-opacity hover:opacity-90"
+            >
+              The Genesis Moment <span aria-hidden>→</span>
+            </Link>
           </div>
-          <p className="mt-14 max-w-2xl font-display text-xl leading-snug md:text-2xl">
-            The kids this funds go into the trades. The trades are the businesses the podcast came
-            from. It comes back around.
+          <img
+            src={genesisImg}
+            alt="A home service business owner telling his story into a broadcast microphone"
+            width={1536}
+            height={1024}
+            loading="lazy"
+            className="w-full rounded-sm object-cover"
+          />
+        </div>
+      </section>
+
+      {/* 7 · MeetEmmy */}
+      <section className="bg-background">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-2 md:items-center md:gap-12 md:py-28">
+          <img
+            src={crisisImg}
+            alt="A fallen tree through the roof of a house at dawn, with a service truck arriving"
+            width={1536}
+            height={1024}
+            loading="lazy"
+            className="w-full rounded-sm object-cover"
+          />
+          <div>
+            <p className="eyebrow text-muted-foreground">MeetEmmy</p>
+            <h2 className="display-lg mt-3">The trades are paying to build the trades.</h2>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed">
+              <p>
+                Somebody's worst morning. A tree through the roof, a line burst, no heat in January.
+              </p>
+              <p>
+                A company answers, shows up, and fixes it. The customer writes down what happened.
+              </p>
+              <p>
+                MeetEmmy turns that review into funding for a young person's way into the trade —
+                and the young person goes to work for a business exactly like the one that just got
+                reviewed.
+              </p>
+            </div>
+            <p className="mt-7 font-display text-2xl leading-snug">
+              The money came out of the trades. It goes back into the trades.
+            </p>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Nobody had to be asked for anything.
+            </p>
+            <Link
+              to="/meetemmy"
+              className="mt-8 inline-flex items-center gap-3 rounded-sm border-2 border-border px-7 py-4 font-display text-lg transition-colors hover:border-gold"
+            >
+              How it works <span aria-hidden className="text-gold">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8 · The loop, closed */}
+      <section className="bg-forest text-forest-foreground">
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-6 md:py-24">
+          <p className="font-display text-2xl leading-snug md:text-4xl">
+            The podcast finds the people who were once the kid.{" "}
+            <span className="text-gold">The Mustard Seed finds the kid.</span>
+          </p>
+          <p className="mt-6 font-display text-2xl leading-snug md:text-4xl">
+            The trades pay for it, and the kid goes back into the trades.
           </p>
         </div>
       </section>
+
 
       {/* 7 · Closing ask */}
       <section className="bg-soil text-soil-foreground">

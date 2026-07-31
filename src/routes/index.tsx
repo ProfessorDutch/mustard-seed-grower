@@ -346,7 +346,33 @@ function Home() {
         </div>
       </section>
 
+      {/* 7 · Closing ask */}
+      <section className="bg-soil text-soil-foreground">
+        <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-6 md:py-24">
+          <p className="eyebrow text-gold">One more thing</p>
+          <h2 className="display-lg mt-3">Somebody did it for you once.</h2>
+          <p className="mx-auto mt-6 max-w-xl lede text-soil-foreground/80">
+            Give once or monthly, in whatever amount you choose.
+          </p>
+          <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
+            <Link
+              to="/give"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 font-display text-lg text-gold-foreground transition-opacity hover:opacity-90"
+            >
+              Give <span aria-hidden>→</span>
+            </Link>
+            <Link
+              to="/start"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-soil-foreground/35 px-8 py-4 text-base transition-colors hover:border-gold hover:text-gold"
+            >
+              I'm a young person
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <SiteFooter />
+
     </div>
   );
 }

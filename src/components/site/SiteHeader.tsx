@@ -6,10 +6,12 @@ const links = [
   { to: "/start", label: "Start here" },
   { to: "/trades", label: "The 24 trades" },
   { to: "/give", label: "Give" },
+  { to: "/the-genesis-moment", label: "The Genesis Moment" },
+  { to: "/meetemmy", label: "MeetEmmy" },
   { to: "/business", label: "For businesses" },
   { to: "/churches", label: "For churches" },
   { to: "/ambassadors", label: "Ambassadors" },
-  { to: "/story", label: "The story" },
+  { to: "/story", label: "Dutch's story" },
   { to: "/memories", label: "Share a memory" },
 ];
 

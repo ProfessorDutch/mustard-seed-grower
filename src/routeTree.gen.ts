@@ -14,9 +14,11 @@ import { Route as AmbassadorsRouteImport } from './routes/ambassadors'
 import { Route as BusinessRouteImport } from './routes/business'
 import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as GiveRouteImport } from './routes/give'
+import { Route as MeetemmyRouteImport } from './routes/meetemmy'
 import { Route as MemoriesRouteImport } from './routes/memories'
 import { Route as StartRouteImport } from './routes/start'
 import { Route as StoryRouteImport } from './routes/story'
+import { Route as TheGenesisMomentRouteImport } from './routes/the-genesis-moment'
 import { Route as TradesIndexRouteImport } from './routes/trades.index'
 import { Route as TradesTradeRouteImport } from './routes/trades.$trade'
 
@@ -45,6 +47,11 @@ const GiveRoute = GiveRouteImport.update({
   path: '/give',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MeetemmyRoute = MeetemmyRouteImport.update({
+  id: '/meetemmy',
+  path: '/meetemmy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MemoriesRoute = MemoriesRouteImport.update({
   id: '/memories',
   path: '/memories',
@@ -58,6 +65,11 @@ const StartRoute = StartRouteImport.update({
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
   path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheGenesisMomentRoute = TheGenesisMomentRouteImport.update({
+  id: '/the-genesis-moment',
+  path: '/the-genesis-moment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TradesIndexRoute = TradesIndexRouteImport.update({
@@ -77,9 +89,11 @@ export interface FileRoutesByFullPath {
   '/business': typeof BusinessRoute
   '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/meetemmy': typeof MeetemmyRoute
   '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
   '/story': typeof StoryRoute
+  '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
@@ -89,9 +103,11 @@ export interface FileRoutesByTo {
   '/business': typeof BusinessRoute
   '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/meetemmy': typeof MeetemmyRoute
   '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
   '/story': typeof StoryRoute
+  '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades': typeof TradesIndexRoute
 }
@@ -102,9 +118,11 @@ export interface FileRoutesById {
   '/business': typeof BusinessRoute
   '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/meetemmy': typeof MeetemmyRoute
   '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
   '/story': typeof StoryRoute
+  '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
@@ -116,9 +134,11 @@ export interface FileRouteTypes {
     | '/business'
     | '/churches'
     | '/give'
+    | '/meetemmy'
     | '/memories'
     | '/start'
     | '/story'
+    | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades/'
   fileRoutesByTo: FileRoutesByTo
@@ -128,9 +148,11 @@ export interface FileRouteTypes {
     | '/business'
     | '/churches'
     | '/give'
+    | '/meetemmy'
     | '/memories'
     | '/start'
     | '/story'
+    | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades'
   id:
@@ -140,9 +162,11 @@ export interface FileRouteTypes {
     | '/business'
     | '/churches'
     | '/give'
+    | '/meetemmy'
     | '/memories'
     | '/start'
     | '/story'
+    | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades/'
   fileRoutesById: FileRoutesById
@@ -153,9 +177,11 @@ export interface RootRouteChildren {
   BusinessRoute: typeof BusinessRoute
   ChurchesRoute: typeof ChurchesRoute
   GiveRoute: typeof GiveRoute
+  MeetemmyRoute: typeof MeetemmyRoute
   MemoriesRoute: typeof MemoriesRoute
   StartRoute: typeof StartRoute
   StoryRoute: typeof StoryRoute
+  TheGenesisMomentRoute: typeof TheGenesisMomentRoute
   TradesTradeRoute: typeof TradesTradeRoute
   TradesIndexRoute: typeof TradesIndexRoute
 }
@@ -197,6 +223,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GiveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/meetemmy': {
+      id: '/meetemmy'
+      path: '/meetemmy'
+      fullPath: '/meetemmy'
+      preLoaderRoute: typeof MeetemmyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/memories': {
       id: '/memories'
       path: '/memories'
@@ -216,6 +249,13 @@ declare module '@tanstack/react-router' {
       path: '/story'
       fullPath: '/story'
       preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/the-genesis-moment': {
+      id: '/the-genesis-moment'
+      path: '/the-genesis-moment'
+      fullPath: '/the-genesis-moment'
+      preLoaderRoute: typeof TheGenesisMomentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/trades/': {
@@ -241,9 +281,11 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessRoute: BusinessRoute,
   ChurchesRoute: ChurchesRoute,
   GiveRoute: GiveRoute,
+  MeetemmyRoute: MeetemmyRoute,
   MemoriesRoute: MemoriesRoute,
   StartRoute: StartRoute,
   StoryRoute: StoryRoute,
+  TheGenesisMomentRoute: TheGenesisMomentRoute,
   TradesTradeRoute: TradesTradeRoute,
   TradesIndexRoute: TradesIndexRoute,
 }

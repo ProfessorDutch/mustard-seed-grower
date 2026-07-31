@@ -83,9 +83,9 @@ function BusinessPage() {
             fields={[
               { name: "name", label: "Your name" },
               { name: "company", label: "Company" },
-              { name: "email", label: "Email", type: "email" },
-              { name: "phone", label: "Phone", type: "tel", optional: true },
-              { name: "trade", label: "What trade are you in?" },
+              { name: "email", label: "Email", type: "email", optional: true },
+              { name: "phone", label: "Phone", type: "tel" },
+              { name: "trade", label: "What trade are you in?", optional: true },
               {
                 name: "interest",
                 label: "What you're interested in",

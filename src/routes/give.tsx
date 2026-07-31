@@ -48,10 +48,26 @@ function GivePage() {
             </p>
             <p className="mt-6 text-gold">I'm still talking about them to this day.</p>
           </blockquote>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="#give"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-7 py-4 font-display text-lg text-gold-foreground transition-opacity hover:opacity-90"
+            >
+              Give now <span aria-hidden>↓</span>
+            </a>
+            <a
+              href="#where"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-soil-foreground/35 px-7 py-4 text-base transition-colors hover:border-gold hover:text-gold"
+            >
+              Where the money goes
+            </a>
+          </div>
         </div>
+
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-20">
+      <section id="where" className="mx-auto max-w-3xl scroll-mt-16 px-6 py-20">
+
         <h1 className="display-md">Where the money goes</h1>
         <div className="mt-8 space-y-6 lede">
           <p>

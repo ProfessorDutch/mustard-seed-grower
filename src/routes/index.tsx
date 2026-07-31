@@ -7,9 +7,6 @@ import crisisImg from "@/assets/crisis-tree.jpg";
 import businessImg from "@/assets/business-owner.jpg";
 import churchImg from "@/assets/church.jpg";
 import electricalImg from "@/assets/trade-electrical.jpg";
-import hvacImg from "@/assets/trade-hvac.jpg";
-import weldingImg from "@/assets/trade-welding.jpg";
-import roofingImg from "@/assets/trade-roofing.jpg";
 
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -91,10 +88,8 @@ function Home() {
           </h1>
           <div className="mt-8 max-w-2xl space-y-5 lede text-soil-foreground/85">
             <p>
-              Somebody along the way told you that what you're good at with your hands is the lesser
-              thing.
+              Somebody along the way invested in you. Now it's time to return the favor.
             </p>
-            <p>That was never true, and it was never God's idea.</p>
             <p>
               The Mustard Seed puts young people into skilled trades — mentorship, training,
               scholarships, and a real way in.
@@ -126,61 +121,74 @@ function Home() {
 
       {/* 2 · What the work holds up */}
       <section id="holding-you-up" className="scroll-mt-16 bg-forest text-forest-foreground">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 md:py-28">
+        <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 md:py-28">
           <p className="eyebrow text-gold">Look down. Look around.</p>
           <h2 className="display-lg mt-3 max-w-3xl">Look at what's holding you up.</h2>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {[
               {
-                img: electricalImg,
-                alt: "An electrician pulling wire in an unfinished building",
-                text: "Somebody wired the room you're sitting in.",
+                num: "01",
+                text: "Somebody poured the foundation under the room you're sitting in.",
               },
               {
-                img: hvacImg,
-                alt: "A technician servicing commercial refrigeration equipment",
-                text: "Somebody kept the hospital cold enough to store blood.",
+                num: "02",
+                text: "Somebody ran the lights, the water, and the power through the walls.",
               },
               {
-                img: weldingImg,
-                alt: "A welder laying a bead on structural steel",
+                num: "03",
                 text: "Somebody welded the bridge you drove over this morning.",
               },
               {
-                img: roofingImg,
-                alt: "A roofer working on a residential roof in summer heat",
-                text: "Somebody was on a roof in July so a family could sleep through a storm in October.",
+                num: "04",
+                text: "Somebody laid the roof that protects the air conditioning you never think about.",
               },
-            ].map((item, i) => (
-              <figure
-                key={item.text}
-                className="relative overflow-hidden rounded-sm bg-soil text-soil-foreground"
+            ].map((item) => (
+              <div
+                key={item.num}
+                className="rounded-sm border border-forest-foreground/15 bg-forest-foreground/5 p-6 sm:p-8"
               >
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  width={1536}
-                  height={1024}
-                  loading="lazy"
-                  className="h-52 w-full object-cover opacity-70 sm:h-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-soil via-soil/55 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <span className="eyebrow text-gold">0{i + 1}</span>
-                  <p className="mt-2 font-display text-xl leading-snug sm:text-2xl">{item.text}</p>
-                </figcaption>
-              </figure>
+                <span className="eyebrow text-gold">{item.num}</span>
+                <p className="mt-3 font-display text-xl leading-snug sm:text-2xl">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 max-w-3xl space-y-6 text-lg leading-relaxed text-forest-foreground/85">
+            <p>
+              That's infrastructure. Poured, framed, wired, covered. Nobody sees it. Everybody stands on it.
+            </p>
+            <p>
+              But infrastructure isn't only buildings.
+            </p>
+            <p>
+              People get built the same way. Somebody pours a foundation into a kid before there's anything standing on it. Somebody frames him. Somebody covers him.
+            </p>
+          </div>
+
+          <div className="mt-10 max-w-3xl space-y-3">
+            {[
+              "Poured into.",
+              "Planted in faith.",
+              "Purposeful in a community.",
+            ].map((line) => (
+              <p key={line} className="font-display text-2xl leading-snug text-forest-foreground md:text-3xl">
+                <span aria-hidden className="mr-3 text-gold">—</span>
+                {line}
+              </p>
             ))}
           </div>
 
           <p className="mt-12 max-w-3xl font-display text-2xl leading-snug md:text-3xl">
-            None of them needed anyone's permission.{" "}
-            <span className="text-gold">All of them got paid.</span>
+            That's what a mustard seed is. The smallest thing anybody ever put in the ground, holding up everything that came after.
           </p>
+          <p className="mt-6 max-w-3xl font-display text-2xl leading-snug text-gold md:text-3xl">
+            Somebody poured into you.
+          </p>
+
           <a
             href="#one-trade"
-            className="mt-8 inline-flex items-center gap-3 text-base text-forest-foreground/80 underline-offset-8 hover:text-gold hover:underline"
+            className="mt-10 inline-flex items-center gap-3 text-base text-forest-foreground/80 underline-offset-8 hover:text-gold hover:underline"
           >
             Here's what one of them actually pays <span aria-hidden className="text-gold">↓</span>
           </a>

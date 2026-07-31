@@ -3,10 +3,12 @@ import { WAGE_SOURCE, money } from "@/data/trades";
 export function WageBlock({
   wages,
   socCode,
+  note,
   labels = ["Starting out", "Median", "Experienced"],
 }: {
   wages: { start: number; median: number; experienced: number };
   socCode?: string;
+  note?: string;
   labels?: [string, string, string] | string[];
 }) {
   const values = [wages.start, wages.median, wages.experienced];
@@ -20,6 +22,7 @@ export function WageBlock({
           </div>
         ))}
       </dl>
+      {note && <p className="mt-6 max-w-2xl text-base leading-relaxed opacity-80">{note}</p>}
       <p className="mt-5 max-w-2xl text-xs leading-relaxed opacity-55">
         {WAGE_SOURCE}
         {socCode ? ` SOC ${socCode}.` : ""} Real numbers only — never estimated, never rounded up.
@@ -27,3 +30,4 @@ export function WageBlock({
     </div>
   );
 }
+

@@ -43,7 +43,7 @@ function StoryPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-soil via-soil/75 to-soil/40" />
         <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-end px-5 pb-14 pt-40 sm:px-6">
           <p className="eyebrow text-gold">Jason "Dutch" Brown, founder</p>
-          <h1 className="display-lg mt-4">He was the kid.</h1>
+          <h1 className="display-lg mt-4">Our founder was one of those kids.</h1>
         </div>
       </section>
 
@@ -72,8 +72,8 @@ function StoryPage() {
         <h2 className="display-md">The pattern</h2>
         <div className="mt-6 space-y-6 text-xl leading-relaxed">
           <p>
-            He has never held a degree, a license, or a title in any industry he changed. There have
-            been three of them.
+            He has never held a degree, a license, or a title. And he changed the world around us in
+            three different industries.
           </p>
           <p className="text-muted-foreground">
             That is the proof, not the point. The long version lives at{" "}

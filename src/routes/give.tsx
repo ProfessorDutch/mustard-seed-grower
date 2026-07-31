@@ -3,7 +3,8 @@ import dutchImg from "@/assets/dutch.jpg";
 import mentorshipImg from "@/assets/mentorship.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { LeadForm } from "@/components/site/LeadForm";
+import { GiveForm } from "@/components/site/GiveForm";
+
 
 export const Route = createFileRoute("/give")({
   head: () => ({
@@ -47,10 +48,26 @@ function GivePage() {
             </p>
             <p className="mt-6 text-gold">I'm still talking about them to this day.</p>
           </blockquote>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="#give"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-7 py-4 font-display text-lg text-gold-foreground transition-opacity hover:opacity-90"
+            >
+              Give now <span aria-hidden>↓</span>
+            </a>
+            <a
+              href="#where"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-soil-foreground/35 px-7 py-4 text-base transition-colors hover:border-gold hover:text-gold"
+            >
+              Where the money goes
+            </a>
+          </div>
         </div>
+
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-20">
+      <section id="where" className="mx-auto max-w-3xl scroll-mt-16 px-6 py-20">
+
         <h1 className="display-md">Where the money goes</h1>
         <div className="mt-8 space-y-6 lede">
           <p>
@@ -64,48 +81,34 @@ function GivePage() {
         </div>
       </section>
 
-      <section className="bg-forest text-forest-foreground">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center">
-          <img
-            src={mentorshipImg}
-            alt="An experienced tradesman teaching a teenager to use a tool"
-            width={1536}
-            height={1024}
-            loading="lazy"
-            className="w-full object-cover"
-          />
-          <div>
-            <h2 className="display-md">Foundation Members</h2>
-            <p className="mt-6 lede text-forest-foreground/85">
-              A monthly gift. The steady money that lets us commit to a kid before we know where the
-              funding is coming from.
+      <section id="give" className="scroll-mt-16 bg-forest text-forest-foreground">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:items-center md:gap-12 md:py-20">
+          <div className="order-2 md:order-1">
+            <img
+              src={mentorshipImg}
+              alt="An experienced tradesman teaching a teenager to use a tool"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              className="w-full rounded-sm object-cover"
+            />
+            <p className="mt-6 text-sm text-forest-foreground/70">
+              Monthly is the steady money that lets us commit to a kid before we know where the
+              funding is coming from. One-time gifts go straight to the next scholarship.
             </p>
-            <div className="mt-10">
-              <LeadForm
-                tone="dark"
-                buttonLabel="Become a Foundation Member"
-                thanks="Thank you. Somebody from The Mustard Seed will reach out personally to set this up."
-                fields={[
-                  { name: "name", label: "Name" },
-                  { name: "email", label: "Email", type: "email" },
-                  {
-                    name: "amount",
-                    label: "Monthly amount",
-                    type: "select",
-                    options: ["$25", "$50", "$100", "$250", "$500", "Another amount"],
-                  },
-                  {
-                    name: "notes",
-                    label: "Anything you'd like us to know",
-                    type: "textarea",
-                    optional: true,
-                  },
-                ]}
-              />
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="display-md">Give once, or every month</h2>
+            <p className="mt-4 lede text-forest-foreground/85">
+              Pick an amount, or enter your own.
+            </p>
+            <div className="mt-8">
+              <GiveForm />
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="mx-auto max-w-3xl px-6 py-20">
         <p className="text-muted-foreground">

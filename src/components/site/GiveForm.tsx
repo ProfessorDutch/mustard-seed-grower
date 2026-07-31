@@ -21,28 +21,29 @@ export function GiveForm() {
 
   if (sent) {
     return (
-      <div className="rounded-sm border border-soil-foreground/20 p-7">
-        <p className="display-md">Got it.</p>
-        <p className="mt-3 lede opacity-80">
+      <div className="rounded-sm border-2 border-soil-foreground/25 p-7">
+        <p className="display-md">Thank you.</p>
+        <p className="mt-3 text-xl leading-relaxed">
           {chosen ? `$${chosen} ` : ""}
-          {freq === "monthly" ? "each month" : "one time"}. Somebody from The Mustard Seed will
-          reach out personally to set this up.
+          {freq === "monthly" ? "every month" : "one time"}. Someone from The Mustard Seed will call
+          or email you personally to finish setting this up.
         </p>
       </div>
     );
   }
 
+  const label = "mb-2 block text-lg font-semibold";
   const field =
-    "w-full rounded-sm border border-forest-foreground/25 bg-transparent px-4 py-3 text-base outline-none placeholder:text-forest-foreground/40 focus:border-gold";
+    "w-full rounded-sm border-2 border-forest-foreground/35 bg-transparent px-4 py-4 text-xl outline-none placeholder:text-forest-foreground/50 focus:border-gold";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-7">
+    <form onSubmit={onSubmit} className="space-y-8">
       <div>
-        <p className="eyebrow mb-3 opacity-70">How often</p>
+        <p className="mb-3 text-lg font-semibold">How often would you like to give?</p>
         <div
           role="radiogroup"
           aria-label="Giving frequency"
-          className="grid grid-cols-2 gap-2 rounded-sm border border-forest-foreground/25 p-1"
+          className="grid grid-cols-2 gap-2 rounded-sm border-2 border-forest-foreground/35 p-1"
         >
           {(["monthly", "once"] as const).map((f) => (
             <button
@@ -54,31 +55,31 @@ export function GiveForm() {
                 setFreq(f);
                 setAmount(PRESETS[f][1]);
               }}
-              className={`rounded-sm px-4 py-3 text-sm font-medium transition-colors ${
+              className={`rounded-sm px-4 py-4 text-xl font-semibold transition-colors ${
                 freq === f
                   ? "bg-gold text-gold-foreground"
-                  : "text-forest-foreground/80 hover:bg-forest-foreground/10"
+                  : "text-forest-foreground hover:bg-forest-foreground/10"
               }`}
             >
-              {f === "monthly" ? "Monthly" : "One time"}
+              {f === "monthly" ? "Every month" : "Just once"}
             </button>
           ))}
         </div>
       </div>
 
       <div>
-        <p className="eyebrow mb-3 opacity-70">Choose your gift</p>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <p className="mb-3 text-lg font-semibold">Choose your gift amount</p>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {presets.map((p) => (
             <button
               key={p}
               type="button"
               aria-pressed={amount === p}
               onClick={() => setAmount(p)}
-              className={`rounded-sm border px-3 py-4 font-display text-xl transition-colors ${
+              className={`rounded-sm border-2 px-3 py-5 font-display text-3xl font-semibold transition-colors ${
                 amount === p
                   ? "border-gold bg-gold text-gold-foreground"
-                  : "border-forest-foreground/25 hover:border-gold"
+                  : "border-forest-foreground/35 hover:border-gold"
               }`}
             >
               ${p}
@@ -89,18 +90,18 @@ export function GiveForm() {
           type="button"
           aria-pressed={amount === "custom"}
           onClick={() => setAmount("custom")}
-          className={`mt-2 w-full rounded-sm border px-3 py-3 text-sm transition-colors ${
+          className={`mt-3 w-full rounded-sm border-2 px-3 py-4 text-xl font-semibold transition-colors ${
             amount === "custom"
               ? "border-gold text-gold"
-              : "border-forest-foreground/25 hover:border-gold"
+              : "border-forest-foreground/35 hover:border-gold"
           }`}
         >
-          Another amount
+          Enter another amount
         </button>
         {amount === "custom" && (
-          <div className="mt-3">
-            <label htmlFor="customAmount" className="mb-2 block text-sm font-medium">
-              Your amount (USD)
+          <div className="mt-4">
+            <label htmlFor="customAmount" className={label}>
+              Your amount in dollars
             </label>
             <input
               id="customAmount"
@@ -112,45 +113,46 @@ export function GiveForm() {
               required
               value={custom}
               onChange={(e) => setCustom(e.target.value)}
-              placeholder="e.g. 75"
+              placeholder="75"
               className={field}
             />
           </div>
         )}
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm font-medium">
-            Name
+          <label htmlFor="name" className={label}>
+            Your name
           </label>
           <input id="name" name="name" required className={field} />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium">
-            Email
+          <label htmlFor="email" className={label}>
+            Your email
           </label>
           <input id="email" name="email" type="email" required className={field} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="notes" className="mb-2 block text-sm font-medium">
-          Anything you'd like us to know <span className="ml-1 text-xs opacity-55">optional</span>
+        <label htmlFor="notes" className={label}>
+          Anything you would like us to know{" "}
+          <span className="font-normal opacity-80">(optional)</span>
         </label>
         <textarea id="notes" name="notes" rows={3} className={field} />
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-sm bg-gold px-8 py-4 font-display text-lg text-gold-foreground transition-opacity hover:opacity-90 sm:w-auto"
+        className="w-full rounded-sm bg-gold px-8 py-5 font-display text-2xl font-semibold text-gold-foreground transition-opacity hover:opacity-90"
       >
         {freq === "monthly"
-          ? `Give $${chosen || "—"} a month`
-          : `Give $${chosen || "—"} once`}
+          ? `Give $${chosen || "—"} every month`
+          : `Give $${chosen || "—"} one time`}
       </button>
-      <p className="text-sm opacity-65">
-        Nothing is charged here. We'll reach out personally to set it up.
+      <p className="text-lg leading-relaxed">
+        Your card is not charged on this page. We will contact you personally to set up your gift.
       </p>
     </form>
   );

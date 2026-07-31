@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -15,16 +15,36 @@ const links = [
   { to: "/memories", label: "Share a memory" },
 ];
 
-export function SiteHeader({ tone = "light" }: { tone?: "light" | "dark" }) {
+export function SiteHeader({
+  tone = "light",
+  back,
+}: {
+  tone?: "light" | "dark";
+  back?: { to: LinkProps["to"]; label: string };
+}) {
   const [open, setOpen] = useState(false);
   const text = tone === "dark" ? "text-soil-foreground" : "text-foreground";
 
   return (
     <header className={`absolute inset-x-0 top-0 z-30 ${text}`}>
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-5 sm:px-6 sm:py-6">
-        <Link to="/" className="truncate font-display text-lg tracking-tight">
-          The Mustard Seed
-        </Link>
+        <div className="min-w-0">
+          <Link to="/" className="block truncate font-display text-lg tracking-tight">
+            The Mustard Seed
+          </Link>
+          {back && (
+            <Link
+              to={back.to}
+              className="mt-1 inline-flex items-center gap-1.5 text-sm opacity-75 underline-offset-4 hover:underline"
+            >
+              <span aria-hidden className="text-gold">
+                ←
+              </span>
+              {back.label}
+            </Link>
+          )}
+        </div>
+
 
         <nav className="hidden items-center gap-6 text-sm lg:flex">
           <Link to="/trades" className="opacity-80 underline-offset-4 hover:underline">

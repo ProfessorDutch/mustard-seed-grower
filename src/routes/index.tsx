@@ -268,9 +268,10 @@ function Home() {
 
       {/* 5 · The doors */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-28">
           <p className="eyebrow text-muted-foreground">Which one are you?</p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <h2 className="display-md mt-3">Pick your door.</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {doors.map((d) => (
               <Link
                 key={d.to}
@@ -283,16 +284,25 @@ function Home() {
                   width={1536}
                   height={1024}
                   loading="lazy"
-                  className="h-64 w-full object-cover opacity-65 transition duration-500 group-hover:scale-105 group-hover:opacity-80"
+                  className="h-52 w-full object-cover opacity-65 transition duration-500 group-hover:scale-105 group-hover:opacity-80 sm:h-64"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-soil via-soil/60 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-7 text-soil-foreground">
-                  <p className="font-display text-2xl">{d.title}</p>
-                  <p className="mt-2 text-sm text-soil-foreground/80">{d.line}</p>
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 text-soil-foreground sm:p-7">
+                  <div className="min-w-0">
+                    <p className="font-display text-xl sm:text-2xl">{d.title}</p>
+                    <p className="mt-2 text-sm text-soil-foreground/80">{d.line}</p>
+                  </div>
+                  <span
+                    aria-hidden
+                    className="shrink-0 text-2xl text-gold transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
+
           <p className="mt-10 text-muted-foreground">
             Or{" "}
             <Link to="/memories" className="text-foreground underline underline-offset-4">

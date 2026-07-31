@@ -71,14 +71,18 @@ export const Route = createFileRoute("/trades/$trade")({
               {
                 "@type": "FAQPage",
                 mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: `What does ${t.name.toLowerCase()} pay?`,
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: `Starting around $${t.wages.start.toLocaleString("en-US")}, median $${t.wages.median.toLocaleString("en-US")}, and experienced workers around $${t.wages.experienced.toLocaleString("en-US")} per year (BLS OEWS, May 2024).`,
-                    },
-                  },
+                  ...(t.wagesVerified === false
+                    ? []
+                    : [
+                        {
+                          "@type": "Question",
+                          name: `What does ${t.name.toLowerCase()} pay?`,
+                          acceptedAnswer: {
+                            "@type": "Answer",
+                            text: `Starting around $${t.wages.start.toLocaleString("en-US")}, median $${t.wages.median.toLocaleString("en-US")}, and experienced workers around $${t.wages.experienced.toLocaleString("en-US")} per year (BLS OEWS, May 2024).`,
+                          },
+                        },
+                      ]),
                   {
                     "@type": "Question",
                     name: `How do you get into ${t.name.toLowerCase()}?`,

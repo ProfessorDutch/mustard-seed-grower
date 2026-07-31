@@ -111,10 +111,13 @@ function GivePage() {
 
 
       <section className="mx-auto max-w-3xl px-6 py-20">
-        <p className="text-muted-foreground">
-          No thermometer. No goal bar. No countdown. No language suggesting a kid is waiting on you.
-          A thing built to be pure cannot be built on manipulation.
-        </p>
+        <blockquote className="display-md">
+          <p>
+            &ldquo;Give, and it shall be given unto you; good measure, pressed down, and shaken
+            together, and running over, shall men give into your bosom.&rdquo;
+          </p>
+          <footer className="mt-6 text-lg font-medium text-muted-foreground">— Luke 6:38</footer>
+        </blockquote>
       </section>
 
       <SiteFooter />

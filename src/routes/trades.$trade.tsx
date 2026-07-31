@@ -43,17 +43,21 @@ export const Route = createFileRoute("/trades/$trade")({
                   "@type": "State",
                   name: "Georgia",
                 },
-                estimatedSalary: [
-                  {
-                    "@type": "MonetaryAmountDistribution",
-                    name: "base",
-                    currency: "USD",
-                    duration: "P1Y",
-                    percentile10: t.wages.start,
-                    median: t.wages.median,
-                    percentile90: t.wages.experienced,
-                  },
-                ],
+                ...(t.wagesVerified === false
+                  ? {}
+                  : {
+                      estimatedSalary: [
+                        {
+                          "@type": "MonetaryAmountDistribution",
+                          name: "base",
+                          currency: "USD",
+                          duration: "P1Y",
+                          percentile10: t.wages.start,
+                          median: t.wages.median,
+                          percentile90: t.wages.experienced,
+                        },
+                      ],
+                    }),
               },
               {
                 "@type": "HowTo",

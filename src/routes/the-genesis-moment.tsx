@@ -155,7 +155,7 @@ function GenesisPage() {
               thanks="Thank you. We'll reach out to schedule and send you the three questions ahead of time."
               fields={[
                 { name: "name", label: "Your name" },
-                { name: "business", label: "Your business" },
+                { name: "business", label: "Your business", optional: true },
                 { name: "email", label: "Email", type: "email" },
                 { name: "who", label: "Who bet on you?", type: "textarea", optional: true },
               ]}

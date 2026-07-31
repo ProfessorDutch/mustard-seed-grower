@@ -164,10 +164,10 @@ function EmmyPage() {
               thanks="Thank you. Someone will call you — a real person, which is rather the point."
               fields={[
                 { name: "name", label: "Your name" },
-                { name: "business", label: "Your business" },
+                { name: "business", label: "Your business", optional: true },
                 { name: "trade", label: "What you do", optional: true },
-                { name: "email", label: "Email", type: "email" },
-                { name: "phone", label: "Phone", optional: true },
+                { name: "email", label: "Email", type: "email", optional: true },
+                { name: "phone", label: "Phone", type: "tel" as const },
               ]}
             />
           </div>

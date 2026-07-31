@@ -59,7 +59,7 @@ function ChurchesPage() {
             thanks="Thank you. Somebody from The Mustard Seed will follow up with you directly."
             fields={[
               { name: "name", label: "Your name" },
-              { name: "church", label: "Church" },
+              { name: "church", label: "Church", optional: true },
               { name: "role", label: "Your role", optional: true },
               { name: "email", label: "Email", type: "email" },
               { name: "city", label: "City and state" },

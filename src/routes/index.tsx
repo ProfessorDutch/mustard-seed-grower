@@ -164,9 +164,19 @@ function Home() {
             <p>
               People get built the same way. Somebody pours a foundation into a kid before there's anything standing on it. Somebody frames him. Somebody covers him.
             </p>
-            <p>
-              Poured into. Planted in faith. Purposeful in a community.
-            </p>
+          </div>
+
+          <div className="mt-10 max-w-3xl space-y-3">
+            {[
+              "Poured into.",
+              "Planted in faith.",
+              "Purposeful in a community.",
+            ].map((line) => (
+              <p key={line} className="font-display text-2xl leading-snug text-forest-foreground md:text-3xl">
+                <span aria-hidden className="mr-3 text-gold">—</span>
+                {line}
+              </p>
+            ))}
           </div>
 
           <p className="mt-12 max-w-3xl font-display text-2xl leading-snug md:text-3xl">

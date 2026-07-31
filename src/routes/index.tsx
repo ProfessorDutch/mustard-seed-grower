@@ -119,81 +119,79 @@ function Home() {
         </div>
       </section>
 
-      {/* 2 · What the work holds up */}
+      {/* 2 · What the work holds up — wall-section cutaway */}
       <section id="holding-you-up" className="scroll-mt-16 bg-forest text-forest-foreground">
-        <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 md:py-20">
           <p className="eyebrow text-gold">Look down. Look around.</p>
-          <h2 className="display-lg mt-3 max-w-3xl">Look at what's holding you up.</h2>
+          <h2 className="display-lg mt-2">Look at what's holding you up.</h2>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {[
-              {
-                num: "01",
-                text: "Somebody poured the foundation under the room you're sitting in.",
-              },
-              {
-                num: "02",
-                text: "Somebody ran the lights, the water, and the power through the walls.",
-              },
-              {
-                num: "03",
-                text: "Somebody welded the bridge you drove over this morning.",
-              },
-              {
-                num: "04",
-                text: "Somebody laid the roof that protects the air conditioning you never think about.",
-              },
-            ].map((item) => (
+          <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-center md:gap-14">
+            {/* The section drawing: read it top-down, roof to slab */}
+            <div aria-hidden="false" className="border-x border-forest-foreground/25">
+              {[
+                { code: "04", layer: "Roof", text: "Somebody laid the roof over the air conditioning you never think about." },
+                { code: "03", layer: "Steel", text: "Somebody welded the bridge you drove over this morning." },
+                { code: "02", layer: "Walls", text: "Somebody ran the lights, the water, and the power through the walls." },
+                { code: "01", layer: "Foundation", text: "Somebody poured the foundation under the room you're sitting in." },
+              ].map((l) => (
+                <div
+                  key={l.code}
+                  className="grid grid-cols-[3.25rem_minmax(0,1fr)] items-baseline gap-3 border-t border-forest-foreground/25 px-3 py-4 sm:px-4"
+                >
+                  <span className="eyebrow shrink-0 text-gold">{l.code}</span>
+                  <div className="min-w-0">
+                    <span className="eyebrow block text-forest-foreground/50">{l.layer}</span>
+                    <p className="mt-1 text-base leading-snug sm:text-lg">{l.text}</p>
+                  </div>
+                </div>
+              ))}
+              {/* poured slab */}
               <div
-                key={item.num}
-                className="rounded-sm border border-forest-foreground/15 bg-forest-foreground/5 p-6 sm:p-8"
-              >
-                <span className="eyebrow text-gold">{item.num}</span>
-                <p className="mt-3 font-display text-xl leading-snug sm:text-2xl">{item.text}</p>
-              </div>
-            ))}
-          </div>
+                className="h-7 border-t-2 border-gold"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(45deg, color-mix(in oklab, var(--gold) 40%, transparent) 0 1px, transparent 1px 9px)",
+                }}
+              />
+            </div>
 
-          <div className="mt-14 max-w-3xl space-y-6 text-lg leading-relaxed text-forest-foreground/85">
-            <p>
-              That's infrastructure. Poured, framed, wired, covered. Nobody sees it. Everybody stands on it.
-            </p>
-            <p>
-              But infrastructure isn't only buildings.
-            </p>
-            <p>
-              People get built the same way. Somebody pours a foundation into a kid before there's anything standing on it. Somebody frames him. Somebody covers him.
-            </p>
-          </div>
-
-          <div className="mt-10 max-w-3xl space-y-3">
-            {[
-              "Poured into.",
-              "Planted in faith.",
-              "Purposeful in a community.",
-            ].map((line) => (
-              <p key={line} className="font-display text-2xl leading-snug text-forest-foreground md:text-3xl">
-                <span aria-hidden className="mr-3 text-gold">—</span>
-                {line}
+            {/* The reading */}
+            <div>
+              <p className="text-lg leading-relaxed text-forest-foreground/85">
+                That's infrastructure. Poured, framed, wired, covered. Nobody sees it. Everybody
+                stands on it. But infrastructure isn't only buildings — people get built the same
+                way. Somebody pours a foundation into a kid before there's anything standing on it.
+                Somebody frames him. Somebody covers him.
               </p>
-            ))}
+
+              <div className="mt-7 grid gap-px overflow-hidden rounded-sm border border-gold/40 bg-gold/25 sm:grid-cols-3">
+                {["Poured into.", "Planted in faith.", "Purposeful in a community."].map((line) => (
+                  <p
+                    key={line}
+                    className="bg-forest px-4 py-4 font-display text-lg leading-tight text-gold sm:text-xl"
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+
+              <p className="mt-7 font-display text-xl leading-snug sm:text-2xl">
+                That's what a mustard seed is. The smallest thing anybody ever put in the ground,
+                holding up everything that came after.{" "}
+                <span className="text-gold">Somebody poured into you.</span>
+              </p>
+
+              <a
+                href="#one-trade"
+                className="mt-6 inline-flex items-center gap-3 text-base text-forest-foreground/80 underline-offset-8 hover:text-gold hover:underline"
+              >
+                Here's what one of them actually pays <span aria-hidden className="text-gold">↓</span>
+              </a>
+            </div>
           </div>
-
-          <p className="mt-12 max-w-3xl font-display text-2xl leading-snug md:text-3xl">
-            That's what a mustard seed is. The smallest thing anybody ever put in the ground, holding up everything that came after.
-          </p>
-          <p className="mt-6 max-w-3xl font-display text-2xl leading-snug text-gold md:text-3xl">
-            Somebody poured into you.
-          </p>
-
-          <a
-            href="#one-trade"
-            className="mt-10 inline-flex items-center gap-3 text-base text-forest-foreground/80 underline-offset-8 hover:text-gold hover:underline"
-          >
-            Here's what one of them actually pays <span aria-hidden className="text-gold">↓</span>
-          </a>
         </div>
       </section>
+
 
 
       {/* 3 · One trade, shown completely */}

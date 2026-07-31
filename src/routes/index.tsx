@@ -233,38 +233,53 @@ function Home() {
         </div>
       </section>
 
-      {/* 4 · Why this exists */}
+      {/* 4 · He was the kid — Dutch */}
       <section className="bg-soil text-soil-foreground">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center md:py-32">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-2 md:items-center md:gap-12 md:py-28">
           <img
             src={dutchImg}
             alt="Dutch standing in a shop doorway at dusk"
             width={1536}
             height={1024}
             loading="lazy"
-            className="w-full object-cover"
+            className="w-full rounded-sm object-cover"
           />
           <div>
-            <blockquote className="font-display text-2xl leading-snug md:text-3xl">
+            <h2 className="display-lg">He was the kid.</h2>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-soil-foreground/85">
+              <p>
+                Born into poverty in Georgia. Cutting grass at eight. Holding the accounts at ten.
+                Baling pine straw at $2.35 a bag and selling it to the landscapers at his church.
+              </p>
+              <p>
+                He quit school when his father fell off a ladder and broke his back. Took a GED.
+                Went to work. Handed the money to the family.
+              </p>
+              <p>
+                He has never held a degree, a license, or a title in any industry he changed. There
+                have been three of them.
+              </p>
+            </div>
+            <blockquote className="mt-8 border-l-2 border-gold pl-6 font-display text-2xl leading-snug">
               <p>
                 I had people who invested in me and believed in me long before I ever knew my own
                 worth.
               </p>
-              <p className="mt-6 text-gold">I'm still talking about them to this day.</p>
+              <p className="mt-4 text-gold">I'm still talking about them to this day.</p>
+              <footer className="mt-5 text-base font-sans text-soil-foreground/70">
+                Jason "Dutch" Brown, founder
+              </footer>
             </blockquote>
-            <p className="mt-10 text-soil-foreground/80">
-              That's the whole idea. Somebody does that for a kid, and the kid spends the rest of
-              his life telling people about it.
-            </p>
             <Link
               to="/story"
-              className="mt-8 inline-flex items-center gap-3 underline-offset-8 hover:underline"
+              className="mt-8 inline-flex items-center gap-3 text-lg underline-offset-8 hover:underline"
             >
-              The rest of the story <span className="text-gold">→</span>
+              The rest of it <span className="text-gold">→</span>
             </Link>
           </div>
         </div>
       </section>
+
 
       {/* 5 · The doors */}
       <section className="bg-background">

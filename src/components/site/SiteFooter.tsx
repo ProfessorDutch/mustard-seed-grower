@@ -51,17 +51,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              {col.title === "About" && (
-                <li>
-                  <a
-                    href="https://thegenesismoment.com"
-                    className="text-sm text-soil-foreground/80 underline-offset-4 hover:text-gold hover:underline"
-                    rel="noreferrer"
-                  >
-                    The Genesis Moment
-                  </a>
-                </li>
-              )}
             </ul>
           </nav>
         ))}

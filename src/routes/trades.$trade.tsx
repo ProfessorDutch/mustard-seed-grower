@@ -195,18 +195,19 @@ function TradePage() {
         <div className="mx-auto max-w-2xl px-6 py-20">
           <h2 className="display-md">Want to talk to somebody doing this?</h2>
           <p className="mt-4 text-forest-foreground/80">
-            Two fields. A person reads it and writes back.
+            Two fields. A person reads it and texts you back.
           </p>
           <div className="mt-8">
             <LeadForm
               tone="dark"
               buttonLabel="Send it."
-              thanks="Somebody with a name will email you in the next few days."
+              thanks="Somebody with a name will text you in the next few days."
               fields={[
                 { name: "name", label: "Your name" },
-                { name: "email", label: "Email", type: "email" },
+                { name: "phone", label: "Phone", type: "tel" },
               ]}
             />
+
           </div>
         </div>
       </section>

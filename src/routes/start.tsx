@@ -159,34 +159,22 @@ function StartPage() {
       <section className="mx-auto max-w-2xl px-6 py-20">
         <LeadForm
           buttonLabel="Send it."
-          thanks="A person on our team is reading this. You'll hear back from somebody with a name within a few days."
+          thanks="A person on our team is reading this. You'll hear back from somebody with a name in the next few days."
           note="If you're under 18, we'll loop in a parent or guardian before anything starts."
           fields={[
             { name: "name", label: "Your name" },
-            { name: "email", label: "Email", type: "email" },
+            { name: "phone", label: "Phone", type: "tel" },
             { name: "city", label: "City and state" },
-            { name: "phone", label: "Phone", type: "tel", optional: true },
-            { name: "age", label: "Age", type: "number", optional: true },
-            {
-              name: "trade",
-              label: "A trade you're curious about",
-              type: "select",
-              optional: true,
-              options: ["Still deciding", ...trades.map((t) => t.name)],
-            },
-            {
-              name: "notes",
-              label: "Anything you want us to know",
-              type: "textarea",
-              optional: true,
-            },
+            { name: "age", label: "Age", type: "number" },
+            { name: "email", label: "Email", type: "email", optional: true },
           ]}
         >
           <label className="flex items-start gap-3 text-sm">
             <input type="checkbox" required className="mt-1 accent-[var(--gold)]" />
-            <span>It's okay to contact me about getting into a trade.</span>
+            <span>It's okay to text me about getting into a trade.</span>
           </label>
         </LeadForm>
+
       </section>
 
       <section className="bg-forest text-forest-foreground">

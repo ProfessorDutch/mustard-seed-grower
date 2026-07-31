@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-young-worker.jpg";
 import dutchImg from "@/assets/dutch.jpg";
 import mentorshipImg from "@/assets/mentorship.jpg";
+import genesisImg from "@/assets/genesis-moment.jpg";
+import crisisImg from "@/assets/crisis-tree.jpg";
 import businessImg from "@/assets/business-owner.jpg";
 import churchImg from "@/assets/church.jpg";
 import electricalImg from "@/assets/trade-electrical.jpg";

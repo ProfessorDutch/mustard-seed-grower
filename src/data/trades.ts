@@ -4,6 +4,12 @@ import hvac from "@/assets/trade-hvac.jpg";
 import automotive from "@/assets/trade-automotive.jpg";
 import roofing from "@/assets/trade-roofing.jpg";
 import mentorship from "@/assets/mentorship.jpg";
+import carpentry from "@/assets/trade-carpentry.jpg";
+import masonry from "@/assets/trade-masonry.jpg";
+import painting from "@/assets/trade-painting.jpg";
+import flooring from "@/assets/trade-flooring.jpg";
+import landscaping from "@/assets/trade-landscaping.jpg";
+import heavyEquipment from "@/assets/trade-heavy-equipment.jpg";
 
 export const WAGE_SOURCE =
   "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2024 (national). Georgia figures to be added alongside national.";
@@ -272,7 +278,7 @@ export const trades: Trade[] = [
     slug: "construction-carpentry",
     name: "Construction & Carpentry",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: carpentry,
     whatItIs:
       "You build the structure — walls, floors, roofs, forms, stairs, trim. You start with a flat slab and a stack of lumber and end with something people walk into. You work in a crew, outside, and you can see what you did at the end of the day.",
     day: [
@@ -335,7 +341,7 @@ export const trades: Trade[] = [
     slug: "masonry-concrete",
     name: "Masonry & Concrete",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: masonry,
     whatItIs:
       "You place and finish the material everything else sits on — footings, slabs, block, brick, stone. There's a clock on it once the truck pours, and the crew moves together. What you finish today will be there in eighty years.",
     day: [
@@ -398,7 +404,7 @@ export const trades: Trade[] = [
     slug: "window-door-installation",
     name: "Window & Door Installation",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: carpentry,
     whatItIs:
       "You take out old openings and set new ones so they seal, swing, and lock right. Precision work in somebody's house, usually two of you, usually finished the same day. Level, plumb, square — the whole trade is those three words.",
     day: [
@@ -429,7 +435,7 @@ export const trades: Trade[] = [
     slug: "flooring-tile",
     name: "Flooring & Tile",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: flooring,
     whatItIs:
       "You lay the surface people actually stand on — tile, LVP, hardwood, stone. It starts with a floor that isn't flat and ends with lines that read straight from every direction. Mostly on your knees, mostly with one other installer.",
     day: [
@@ -460,7 +466,7 @@ export const trades: Trade[] = [
     slug: "painting-drywall",
     name: "Painting & Drywall",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: painting,
     whatItIs:
       "You close the walls and finish them. Hang board, tape, mud, sand, prime, paint. It is the trade that decides whether a building looks finished or looks rough, and it's the fastest one to get into.",
     day: [
@@ -492,7 +498,7 @@ export const trades: Trade[] = [
     slug: "insulation",
     name: "Insulation",
     group: "Building things that weren't there",
-    image: mentorship,
+    image: painting,
     whatItIs:
       "You make buildings hold their temperature — batts, blown-in, spray foam, and air sealing. It's fast-paced production work with a small crew, and the energy side of it is growing every year.",
     day: [
@@ -586,7 +592,7 @@ export const trades: Trade[] = [
     slug: "heavy-equipment-operation",
     name: "Heavy Equipment Operation",
     group: "Machines and engines",
-    image: roofing,
+    image: heavyEquipment,
     whatItIs:
       "You run the machines that move earth — excavators, dozers, loaders, graders. You cut grade to a survey stake and a laser, and you get good enough that the machine feels like your hands. Site work, roads, utilities, pads.",
     day: [
@@ -710,7 +716,7 @@ export const trades: Trade[] = [
     slug: "landscaping-irrigation",
     name: "Landscaping & Irrigation",
     group: "Property and grounds",
-    image: mentorship,
+    image: landscaping,
     whatItIs:
       "You build and maintain the outside of properties — plantings, hardscape, drainage, and irrigation systems that have to work without anyone thinking about them. Outdoors every day, on a crew, and the results are immediate.",
     day: [
@@ -742,7 +748,7 @@ export const trades: Trade[] = [
     slug: "pool-spa-service",
     name: "Pool & Spa Service",
     group: "Property and grounds",
-    image: mentorship,
+    image: landscaping,
     whatItIs:
       "You keep water clean and equipment running — pumps, heaters, filters, automation, and chemistry. Route work in your own truck, mostly residential, and the technical side (equipment and automation) is where the money is.",
     day: [
@@ -773,7 +779,7 @@ export const trades: Trade[] = [
     slug: "pest-control",
     name: "Pest Control",
     group: "Property and grounds",
-    image: mentorship,
+    image: landscaping,
     whatItIs:
       "You inspect structures and treat them — termites, rodents, ants, mosquitoes, and wildlife. It's part biology, part construction knowledge, part customer trust. Your own route, your own truck, and steady recurring work.",
     day: [

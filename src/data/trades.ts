@@ -3,7 +3,7 @@ import welding from "@/assets/trade-welding.jpg";
 import hvac from "@/assets/trade-hvac.jpg";
 import automotive from "@/assets/trade-automotive.jpg";
 import roofing from "@/assets/trade-roofing.jpg";
-import mentorship from "@/assets/mentorship.jpg";
+
 import carpentry from "@/assets/trade-carpentry.jpg";
 import masonry from "@/assets/trade-masonry.jpg";
 import painting from "@/assets/trade-painting.jpg";

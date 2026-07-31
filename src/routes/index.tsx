@@ -253,7 +253,7 @@ function Home() {
             className="w-full rounded-sm object-cover"
           />
           <div>
-            <h2 className="display-lg">He was the kid.</h2>
+            <h2 className="display-lg">Our founder was one of those kids.</h2>
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-soil-foreground/85">
               <p>
                 Born into poverty in Georgia. Cutting grass at eight. Holding the accounts at ten.
@@ -264,8 +264,8 @@ function Home() {
                 Went to work. Handed the money to the family.
               </p>
               <p>
-                He has never held a degree, a license, or a title in any industry he changed. There
-                have been three of them.
+                He has never held a degree, a license, or a title. And he changed the world around us
+                in three different industries.
               </p>
             </div>
             <blockquote className="mt-8 border-l-2 border-gold pl-6 font-display text-2xl leading-snug">

@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AmbassadorsRouteImport } from './routes/ambassadors'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as GiveRouteImport } from './routes/give'
+import { Route as MemoriesRouteImport } from './routes/memories'
 import { Route as StartRouteImport } from './routes/start'
+import { Route as StoryRouteImport } from './routes/story'
 import { Route as TradesIndexRouteImport } from './routes/trades.index'
 import { Route as TradesTradeRouteImport } from './routes/trades.$trade'
 
@@ -26,14 +30,34 @@ const AmbassadorsRoute = AmbassadorsRouteImport.update({
   path: '/ambassadors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChurchesRoute = ChurchesRouteImport.update({
+  id: '/churches',
+  path: '/churches',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GiveRoute = GiveRouteImport.update({
   id: '/give',
   path: '/give',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MemoriesRoute = MemoriesRouteImport.update({
+  id: '/memories',
+  path: '/memories',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StartRoute = StartRouteImport.update({
   id: '/start',
   path: '/start',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TradesIndexRoute = TradesIndexRouteImport.update({
@@ -50,16 +74,24 @@ const TradesTradeRoute = TradesTradeRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ambassadors': typeof AmbassadorsRoute
+  '/business': typeof BusinessRoute
+  '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
+  '/story': typeof StoryRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ambassadors': typeof AmbassadorsRoute
+  '/business': typeof BusinessRoute
+  '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
+  '/story': typeof StoryRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades': typeof TradesIndexRoute
 }
@@ -67,23 +99,50 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ambassadors': typeof AmbassadorsRoute
+  '/business': typeof BusinessRoute
+  '/churches': typeof ChurchesRoute
   '/give': typeof GiveRoute
+  '/memories': typeof MemoriesRoute
   '/start': typeof StartRoute
+  '/story': typeof StoryRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/ambassadors' | '/give' | '/start' | '/trades/$trade' | '/trades/'
+    | '/'
+    | '/ambassadors'
+    | '/business'
+    | '/churches'
+    | '/give'
+    | '/memories'
+    | '/start'
+    | '/story'
+    | '/trades/$trade'
+    | '/trades/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ambassadors' | '/give' | '/start' | '/trades/$trade' | '/trades'
+  to:
+    | '/'
+    | '/ambassadors'
+    | '/business'
+    | '/churches'
+    | '/give'
+    | '/memories'
+    | '/start'
+    | '/story'
+    | '/trades/$trade'
+    | '/trades'
   id:
     | '__root__'
     | '/'
     | '/ambassadors'
+    | '/business'
+    | '/churches'
     | '/give'
+    | '/memories'
     | '/start'
+    | '/story'
     | '/trades/$trade'
     | '/trades/'
   fileRoutesById: FileRoutesById
@@ -91,8 +150,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AmbassadorsRoute: typeof AmbassadorsRoute
+  BusinessRoute: typeof BusinessRoute
+  ChurchesRoute: typeof ChurchesRoute
   GiveRoute: typeof GiveRoute
+  MemoriesRoute: typeof MemoriesRoute
   StartRoute: typeof StartRoute
+  StoryRoute: typeof StoryRoute
   TradesTradeRoute: typeof TradesTradeRoute
   TradesIndexRoute: typeof TradesIndexRoute
 }
@@ -113,6 +176,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AmbassadorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/churches': {
+      id: '/churches'
+      path: '/churches'
+      fullPath: '/churches'
+      preLoaderRoute: typeof ChurchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/give': {
       id: '/give'
       path: '/give'
@@ -120,11 +197,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GiveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/memories': {
+      id: '/memories'
+      path: '/memories'
+      fullPath: '/memories'
+      preLoaderRoute: typeof MemoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/start': {
       id: '/start'
       path: '/start'
       fullPath: '/start'
       preLoaderRoute: typeof StartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/trades/': {
@@ -147,11 +238,25 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AmbassadorsRoute: AmbassadorsRoute,
+  BusinessRoute: BusinessRoute,
+  ChurchesRoute: ChurchesRoute,
   GiveRoute: GiveRoute,
+  MemoriesRoute: MemoriesRoute,
   StartRoute: StartRoute,
+  StoryRoute: StoryRoute,
   TradesTradeRoute: TradesTradeRoute,
   TradesIndexRoute: TradesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import businessImg from "@/assets/business-owner.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LeadForm } from "@/components/site/LeadForm";
 
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/business")({
 function BusinessPage() {
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[65vh] bg-soil text-soil-foreground">
         <img
@@ -101,6 +102,7 @@ function BusinessPage() {
         </div>
       </section>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

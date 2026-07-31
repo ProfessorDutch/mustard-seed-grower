@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import churchImg from "@/assets/church.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LeadForm } from "@/components/site/LeadForm";
 
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/churches")({
 function ChurchesPage() {
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[60vh] bg-soil text-soil-foreground">
         <img
@@ -89,6 +90,7 @@ function ChurchesPage() {
         </div>
       </section>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

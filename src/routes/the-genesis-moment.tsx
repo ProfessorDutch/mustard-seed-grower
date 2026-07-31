@@ -3,6 +3,7 @@ import genesisImg from "@/assets/genesis-moment.jpg";
 import businessImg from "@/assets/business-owner.jpg";
 import mentorshipImg from "@/assets/mentorship.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LeadForm } from "@/components/site/LeadForm";
 
@@ -49,7 +50,7 @@ const episodes = [
 function GenesisPage() {
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[70vh] bg-soil text-soil-foreground">
         <img
@@ -184,6 +185,7 @@ function GenesisPage() {
         </a>
       </section>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { TRADE_GROUPS, money, tradeBySlug } from "@/data/trades";
 
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/trades/")({
 function TradesIndex() {
   return (
     <div>
-      <SiteHeader />
+      <SiteHeader back={{ to: "/", label: "Home" }} />
       <header className="mx-auto max-w-5xl px-6 pb-12 pt-32 md:pt-40">
         <h1 className="display-lg">Twenty-four ways in.</h1>
         <p className="mt-6 max-w-2xl lede text-muted-foreground">
@@ -72,6 +73,7 @@ function TradesIndex() {
           </section>
         ))}
       </div>
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

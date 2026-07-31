@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import dutchImg from "@/assets/dutch.jpg";
 import crisisImg from "@/assets/crisis-tree.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
 export const Route = createFileRoute("/story")({
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/story")({
 function StoryPage() {
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[70vh] bg-soil text-soil-foreground">
         <img
@@ -164,6 +165,7 @@ function StoryPage() {
         </div>
       </div>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

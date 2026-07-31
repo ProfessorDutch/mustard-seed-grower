@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LeadForm } from "@/components/site/LeadForm";
 
@@ -26,7 +27,7 @@ export const Route = createFileRoute("/memories")({
 function MemoriesPage() {
   return (
     <div>
-      <SiteHeader />
+      <SiteHeader back={{ to: "/", label: "Home" }} />
       <header className="mx-auto max-w-3xl px-6 pb-10 pt-32 md:pt-40">
         <h1 className="display-lg">Who believed in you first?</h1>
         <p className="mt-6 lede text-muted-foreground">
@@ -65,6 +66,7 @@ function MemoriesPage() {
         </div>
       </section>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

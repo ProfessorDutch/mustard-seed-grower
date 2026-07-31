@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WageBlock } from "@/components/site/WageBlock";
 import { LeadForm } from "@/components/site/LeadForm";
@@ -101,7 +102,7 @@ function TradePage() {
 
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/trades", label: "All 24 trades" }} />
 
       <section className="relative h-[70vh] bg-soil">
         <img
@@ -217,6 +218,7 @@ function TradePage() {
         </div>
       </section>
 
+      <BackBar to="/trades" label="Back to all 24 trades" alsoTo="/" alsoLabel="Home" />
       <SiteFooter />
     </div>
   );

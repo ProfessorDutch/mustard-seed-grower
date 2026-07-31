@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import dutchImg from "@/assets/dutch.jpg";
 import mentorshipImg from "@/assets/mentorship.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { GiveForm } from "@/components/site/GiveForm";
 
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/give")({
 function GivePage() {
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[70vh] bg-soil text-soil-foreground">
         <img
@@ -120,6 +121,7 @@ function GivePage() {
         </blockquote>
       </section>
 
+      <BackBar to="/" label="Back to home" />
       <SiteFooter />
     </div>
   );

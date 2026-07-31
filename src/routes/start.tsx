@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/hero-young-worker.jpg";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { BackBar } from "@/components/site/BackBar";
 import { WageBlock } from "@/components/site/WageBlock";
 import { LeadForm } from "@/components/site/LeadForm";
 import { EXPLORER_SLUGS, trades, tradeBySlug } from "@/data/trades";
@@ -32,7 +33,7 @@ function StartPage() {
 
   return (
     <div>
-      <SiteHeader tone="dark" />
+      <SiteHeader tone="dark" back={{ to: "/", label: "Home" }} />
 
       <section className="relative min-h-[80vh] bg-soil">
         <img
@@ -191,6 +192,7 @@ function StartPage() {
           </p>
         </div>
       </section>
+      <BackBar to="/" label="Back to home" />
     </div>
   );
 }

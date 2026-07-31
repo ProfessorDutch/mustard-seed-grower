@@ -10,6 +10,19 @@ import painting from "@/assets/trade-painting.jpg";
 import flooring from "@/assets/trade-flooring.jpg";
 import landscaping from "@/assets/trade-landscaping.jpg";
 import heavyEquipment from "@/assets/trade-heavy-equipment.jpg";
+import refrigeration from "@/assets/trade-refrigeration.jpg";
+import elevator from "@/assets/trade-elevator.jpg";
+import fireSecurity from "@/assets/trade-fire-security.jpg";
+import appliance from "@/assets/trade-appliance.jpg";
+import aviation from "@/assets/trade-aviation.jpg";
+import locksmith from "@/assets/trade-locksmith.jpg";
+import windowDoor from "@/assets/trade-window-door.jpg";
+import insulation from "@/assets/trade-insulation.jpg";
+import signAwning from "@/assets/trade-sign-awning.jpg";
+import solar from "@/assets/trade-solar.jpg";
+import telecom from "@/assets/trade-telecom.jpg";
+import poolSpa from "@/assets/trade-pool-spa.jpg";
+import pestControl from "@/assets/trade-pest-control.jpg";
 
 export const WAGE_SOURCE =
   "U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2024 (national). Starting out = 10th percentile. Median = 50th. Experienced = 90th. Annual. Georgia figures to be added alongside national.";
@@ -135,10 +148,10 @@ export const trades: Trade[] = [
       "Afternoon change-out with another tech, two of us on the condenser.",
       "Braze the lines, pull a vacuum, charge it, verify the split.",
     ],
-    wages: { start: 37000, median: 59810, experienced: 94000 },
+    wages: { start: 39130, median: 59810, experienced: 91020 },
     socCode: "49-9021",
-    wagesVerified: false,
-    wageNote: "HVACR technicians are SOC 49-9021; plumbers track separately under SOC 47-2152. The figures above are the HVACR occupation.",
+    wagesVerified: true,
+    wageNote: "HVACR technicians are SOC 49-9021. Plumbers track separately under SOC 47-2152: $40,670 starting, $62,970 median, $105,150 experienced.",
     howYouGetIn: [
       "Six months to two years of trade school, or a paid apprenticeship.",
       "EPA 608 certification is required to touch refrigerant. It's a test, not a degree.",
@@ -158,7 +171,7 @@ export const trades: Trade[] = [
     slug: "commercial-refrigeration",
     name: "Commercial Refrigeration",
     group: "Keeping buildings alive",
-    image: hvac,
+    image: refrigeration,
     whatItIs:
       "You keep cold things cold when somebody's whole business depends on it. Grocery stores, restaurants, cold storage, hospitals holding blood and vaccines. When a walk-in fails at two in the morning, somebody is losing thousands of dollars an hour until you get there.",
     day: [
@@ -193,7 +206,7 @@ export const trades: Trade[] = [
     slug: "elevator-repair",
     name: "Elevator Repair",
     group: "Keeping buildings alive",
-    image: electrical,
+    image: elevator,
     whatItIs:
       "You install and maintain the machines that move people vertically through buildings. Every high-rise, hospital, and parking deck in Atlanta runs on equipment somebody in this trade signed off on. It is the highest-paid construction trade in the country and almost no one under twenty knows it exists.",
     day: [
@@ -205,9 +218,9 @@ export const trades: Trade[] = [
       "Paperwork matters here. Everything you touch gets recorded.",
       "You are always working with somebody. Nobody does this trade alone.",
     ],
-    wages: { start: 55000, median: 106580, experienced: 145000 },
+    wages: { start: 54720, median: 106580, experienced: 149250 },
     socCode: "47-4021",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "A four-year apprenticeship, almost always through IUEC. You are paid throughout.",
       "Entry is competitive and comes through an aptitude test and interview.",
@@ -227,7 +240,7 @@ export const trades: Trade[] = [
     slug: "fire-security-systems",
     name: "Fire & Security Systems",
     group: "Keeping buildings alive",
-    image: electrical,
+    image: fireSecurity,
     whatItIs:
       "You install and service the systems that tell people to get out of a building. Alarms, sprinkler monitoring, access control, cameras. Low voltage work, mostly clean, and it is the one trade where the thing you installed only matters on the worst day the building ever has.",
     day: [
@@ -239,9 +252,9 @@ export const trades: Trade[] = [
       "Fix it, retest, get the sign-off.",
       "Service calls fill the days you're not on a build.",
     ],
-    wages: { start: 38000, median: 59000, experienced: 88000 },
+    wages: { start: 38410, median: 59300, experienced: 81980 },
     socCode: "49-2098",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "On-the-job training with a low voltage contractor. Many hire with no experience.",
       "NICET certification is the credential that moves your pay, in levels.",
@@ -261,7 +274,7 @@ export const trades: Trade[] = [
     slug: "appliance-repair",
     name: "Appliance Repair",
     group: "Keeping buildings alive",
-    image: automotive,
+    image: appliance,
     whatItIs:
       "You fix the machines inside people's houses that they cannot live without for more than two days. Refrigerators, washers, ranges, dryers. It is one of the few trades you can enter with almost no money and run out of your own van inside two years.",
     day: [
@@ -273,9 +286,9 @@ export const trades: Trade[] = [
       "Afternoon is a range with no bake. Igniter, ordered, back Thursday.",
       "Every job ends with somebody relieved. That never gets old.",
     ],
-    wages: { start: 33000, median: 46000, experienced: 72000 },
+    wages: { start: 33280, median: 49410, experienced: 77800 },
     socCode: "49-9031",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "Short training, six months to a year, or straight on-the-job with a service company.",
       "Manufacturer certifications \u2014 Whirlpool, GE, LG, Samsung \u2014 raise your rate.",
@@ -341,9 +354,9 @@ export const trades: Trade[] = [
       "QC comes through with a gauge and sometimes an X-ray.",
       "Whether it passed is not an opinion. That's what I like about it.",
     ],
-    wages: { start: 36000, median: 52830, experienced: 79000 },
+    wages: { start: 38130, median: 51000, experienced: 75850 },
     socCode: "51-4121",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "Six months to two years at a technical college, or a shop that trains you.",
       "The certification is what pays \u2014 AWS structural, then 6G pipe. Each one moves your number.",
@@ -411,9 +424,9 @@ export const trades: Trade[] = [
       "Flashing at the chimney is where the skill actually is.",
       "Ground cleaned with a magnet before we leave. Every nail.",
     ],
-    wages: { start: 34000, median: 50030, experienced: 77000 },
+    wages: { start: 37060, median: 50970, experienced: 80780 },
     socCode: "47-2181",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "Hired with no experience, trained on the roof. Nearly every roofer in Georgia started this way.",
       "Manufacturer certifications \u2014 GAF, Owens Corning \u2014 matter once you're running work.",
@@ -433,7 +446,7 @@ export const trades: Trade[] = [
     slug: "window-door-installation",
     name: "Window & Door Installation",
     group: "Building things that weren't there",
-    image: carpentry,
+    image: windowDoor,
     whatItIs:
       "You put in the openings \u2014 glass, frames, entry doors, storefront. Residential replacement is precise indoor work; commercial glazing is heavy work on a building that isn't finished. Both are trades where a bad install shows up as a leak two winters later, so the careful people stay busy.",
     day: [
@@ -541,7 +554,7 @@ export const trades: Trade[] = [
     slug: "insulation",
     name: "Insulation",
     group: "Building things that weren't there",
-    image: painting,
+    image: insulation,
     whatItIs:
       "You are the reason a house costs a hundred dollars a month to cool instead of three hundred. Batts, blown-in, spray foam, and mechanical insulation on pipe and duct. Spray foam in particular is a specialized, certified, well-paid corner of the trade that most people don't know exists.",
     day: [
@@ -553,9 +566,10 @@ export const trades: Trade[] = [
       "Suit, respirator, gloves the whole time on the foam work.",
       "Blower door test at the end tells you whether you did it right.",
     ],
-    wages: { start: 33000, median: 49000, experienced: 73000 },
+    wages: { start: 35950, median: 48680, experienced: 77160 },
     socCode: "47-2131",
-    wagesVerified: false,
+    wagesVerified: true,
+    wageNote: "Floor, ceiling, and wall insulation workers are SOC 47-2131. Mechanical insulation workers (pipe and duct) track separately under SOC 47-2132: $39,450 starting, $57,250 median, $94,110 experienced.",
     howYouGetIn: [
       "Hired and trained on the crew. No school required to start.",
       "SPFA certification for spray foam is the credential that changes your pay.",
@@ -575,7 +589,7 @@ export const trades: Trade[] = [
     slug: "sign-awning-installation",
     name: "Sign & Awning Installation",
     group: "Building things that weren't there",
-    image: welding,
+    image: signAwning,
     whatItIs:
       "You put a business's name on the building. Channel letters, monument signs, awnings, LED retrofits \u2014 part electrical, part fabrication, part crane work. It is a small trade nobody talks about, and the people in it are almost never looking for work.",
     day: [
@@ -622,9 +636,10 @@ export const trades: Trade[] = [
       "Afternoon is a hard one \u2014 intermittent electrical, and those take as long as they take.",
       "Find it at four. A chafed harness behind the engine.",
     ],
-    wages: { start: 34000, median: 49670, experienced: 79000 },
+    wages: { start: 33660, median: 49670, experienced: 80850 },
     socCode: "49-3023",
-    wagesVerified: false,
+    wagesVerified: true,
+    wageNote: "Automotive service technicians are SOC 49-3023. Diesel, bus, and truck technicians track separately under SOC 49-3031: $41,670 starting, $60,640 median, $85,980 experienced.",
     howYouGetIn: [
       "One to two years at a technical college, or hired as a lube tech and moved up.",
       "ASE certifications are the currency. Each one moves your pay.",
@@ -678,7 +693,7 @@ export const trades: Trade[] = [
     slug: "aviation-maintenance",
     name: "Aviation & Aircraft Maintenance",
     group: "Machines and engines",
-    image: automotive,
+    image: aviation,
     whatItIs:
       "You sign your name to work that people fly on. Inspections, repairs, overhauls, avionics. It is federally licensed, it is the most heavily documented trade on this list, and an A&P certificate is a credential that works in every state and most countries.",
     day: [
@@ -690,9 +705,9 @@ export const trades: Trade[] = [
       "Inspector signs behind me before anything closes up.",
       "Aircraft goes back on the line tomorrow morning.",
     ],
-    wages: { start: 45000, median: 79140, experienced: 112000 },
+    wages: { start: 47790, median: 78680, experienced: 120080 },
     socCode: "49-3011",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "An FAA-approved A&P program, eighteen months to two years.",
       "Or 30 months of documented experience under a certificated mechanic, then the exams.",
@@ -712,7 +727,7 @@ export const trades: Trade[] = [
     slug: "solar-renewable-energy",
     name: "Solar & Renewable Energy",
     group: "Power and connection",
-    image: roofing,
+    image: solar,
     whatItIs:
       "You put power generation on a roof or in a field. Racking, panels, inverters, interconnection. It is the newest trade on this list, it is electrical work with a different envelope, and the people entering it now will be the senior people in ten years.",
     day: [
@@ -724,9 +739,9 @@ export const trades: Trade[] = [
       "Commissioning at the end. System comes online and the meter starts running backward.",
       "Inspection is scheduled for Thursday and everything has to be right for it.",
     ],
-    wages: { start: 36000, median: 51860, experienced: 76000 },
+    wages: { start: 39070, median: 51860, experienced: 80150 },
     socCode: "47-2231",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "Hired and trained on the crew. Most installers start with no experience.",
       "NABCEP certification is the industry credential and it moves your pay.",
@@ -746,7 +761,7 @@ export const trades: Trade[] = [
     slug: "telecommunications-cabling",
     name: "Telecommunications & Cabling",
     group: "Power and connection",
-    image: electrical,
+    image: telecom,
     whatItIs:
       "You install the physical layer everything digital runs on. Fiber, copper, data centers, cell sites. Nobody thinks about it until it's down, and Georgia is building data centers faster than it can staff them.",
     day: [
@@ -758,9 +773,10 @@ export const trades: Trade[] = [
       "One run is out of spec. Reterminate and retest until it passes.",
       "Documentation package goes to the customer at the end of the job.",
     ],
-    wages: { start: 36000, median: 61000, experienced: 92000 },
+    wages: { start: 42940, median: 70500, experienced: 104840 },
     socCode: "49-9052",
-    wagesVerified: false,
+    wagesVerified: true,
+    wageNote: "Telecommunications line installers are SOC 49-9052. Telecom equipment installers and repairers track separately under SOC 49-2022: $42,440 starting, $62,630 median, $94,970 experienced.",
     howYouGetIn: [
       "Hired as a helper with no experience. Very open door.",
       "BICSI and fiber certifications are what move you up, and they are short courses.",
@@ -816,7 +832,7 @@ export const trades: Trade[] = [
     slug: "pool-spa-service",
     name: "Pool & Spa Service",
     group: "Property and grounds",
-    image: landscaping,
+    image: poolSpa,
     whatItIs:
       "You keep water safe and equipment running. Chemistry, pumps, filters, heaters, automation. It is route work with real technical depth underneath it, and in Georgia it runs almost year-round.",
     day: [
@@ -828,10 +844,9 @@ export const trades: Trade[] = [
       "Afternoon service call: pump is running but not moving water. Bad seal, losing prime.",
       "Rebuild it on site, prime it, watch the pressure come up.",
     ],
-    wages: { start: 31000, median: 45000, experienced: 68000 },
+    wages: { start: 33860, median: 48620, experienced: 76110 },
     socCode: "49-9071",
-    wagesVerified: false,
-    wageNote: "There is no clean SOC code for pool and spa work. BLS most often captures it under SOC 49-9071, Maintenance and Repair Workers, General. That is the occupation printed above.",
+    wagesVerified: true,
     howYouGetIn: [
       "Hired with no experience and trained on a route. Very open door.",
       "CPO \u2014 Certified Pool Operator \u2014 is a two-day course and it is the credential that matters.",
@@ -851,7 +866,7 @@ export const trades: Trade[] = [
     slug: "pest-control",
     name: "Pest Control",
     group: "Property and grounds",
-    image: landscaping,
+    image: pestControl,
     whatItIs:
       "You protect buildings and the people in them from things that damage both. Termites, rodents, mosquitoes, commercial accounts with health inspections riding on your work. It is licensed, it is recurring revenue, and it is one of the steadiest trades in the South.",
     day: [
@@ -885,7 +900,7 @@ export const trades: Trade[] = [
     slug: "locksmithing",
     name: "Locksmithing",
     group: "Property and grounds",
-    image: automotive,
+    image: locksmith,
     whatItIs:
       "You control who gets into what. Residential, automotive, commercial master key systems, safes, electronic access. It is the smallest trade on this list and the one where being genuinely good makes you nearly irreplaceable in a market.",
     day: [
@@ -897,9 +912,9 @@ export const trades: Trade[] = [
       "That one is a chart problem before it's a lock problem. You design the hierarchy first.",
       "Afternoon ends with a safe that a customer inherited and has no combination for.",
     ],
-    wages: { start: 32000, median: 48000, experienced: 71000 },
+    wages: { start: 34750, median: 50490, experienced: 79340 },
     socCode: "49-9094",
-    wagesVerified: false,
+    wagesVerified: true,
     howYouGetIn: [
       "Apprentice with a working locksmith. This trade still runs mostly on that.",
       "ALOA training and certification is the recognized credential.",

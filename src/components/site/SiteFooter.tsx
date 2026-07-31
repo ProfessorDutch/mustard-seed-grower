@@ -20,7 +20,9 @@ const columns: { title: string; links: { to: string; label: string }[] }[] = [
   {
     title: "About",
     links: [
-      { to: "/story", label: "The story" },
+      { to: "/story", label: "Dutch's story" },
+      { to: "/the-genesis-moment", label: "The Genesis Moment" },
+      { to: "/meetemmy", label: "MeetEmmy" },
       { to: "/memories", label: "Share a memory" },
     ],
   },

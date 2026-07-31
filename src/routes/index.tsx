@@ -91,10 +91,8 @@ function Home() {
           </h1>
           <div className="mt-8 max-w-2xl space-y-5 lede text-soil-foreground/85">
             <p>
-              Somebody along the way told you that what you're good at with your hands is the lesser
-              thing.
+              Somebody along the way invested in you. Now it's time to return the favor.
             </p>
-            <p>That was never true, and it was never God's idea.</p>
             <p>
               The Mustard Seed puts young people into skilled trades — mentorship, training,
               scholarships, and a real way in.

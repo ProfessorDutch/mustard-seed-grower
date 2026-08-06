@@ -8,9 +8,9 @@ import { GiveForm } from "@/components/site/GiveForm";
 
 
 export const Route = createFileRoute("/give")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    gift: typeof search["gift"] === "string" ? (search["gift"] as string) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { gift?: string } =>
+    typeof search["gift"] === "string" ? { gift: search["gift"] as string } : {},
+
   head: () => ({
     meta: [
       { title: "Become a Foundation Member | The Mustard Seed" },

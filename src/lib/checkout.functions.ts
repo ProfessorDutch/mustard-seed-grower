@@ -56,8 +56,17 @@ export const createGiftCheckout = createServerFn({ method: "POST" })
     if (!res.ok) {
       const text = await res.text();
       console.error(`Stripe checkout failed [${res.status}]: ${text}`);
-      throw new Error("We couldn't open the secure payment page. Please try again.");
+      let detail = "";
+      try {
+        detail = (JSON.parse(text) as { error?: { message?: string } }).error?.message ?? "";
+      } catch {
+        detail = "";
+      }
+      throw new Error(
+        `Stripe rejected the request (${res.status})${detail ? `: ${detail}` : ""}`,
+      );
     }
+
 
     const session = (await res.json()) as { url?: string };
     if (!session.url) throw new Error("Stripe did not return a checkout link.");

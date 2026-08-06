@@ -104,14 +104,32 @@ function GivePage() {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <h2 className="display-md">Give once, or every month</h2>
-            <p className="mt-4 lede text-forest-foreground/85">
-              Pick an amount, or enter your own.
-            </p>
-            <div className="mt-8">
-              <GiveForm />
-            </div>
+            {gift === "thanks" ? (
+              <div className="rounded-sm border-2 border-gold p-7">
+                <h2 className="display-md">Thank you.</h2>
+                <p className="mt-4 text-xl leading-relaxed">
+                  Your gift went through. Stripe emailed you a receipt, and you'll hear from
+                  someone here personally.
+                </p>
+              </div>
+            ) : (
+              <>
+                {gift === "cancelled" && (
+                  <p className="mb-6 rounded-sm border-2 border-forest-foreground/40 px-4 py-3 text-lg">
+                    No charge was made. You can pick up right where you left off.
+                  </p>
+                )}
+                <h2 className="display-md">Give once, or every month</h2>
+                <p className="mt-4 lede text-forest-foreground/85">
+                  Pick an amount, or enter your own.
+                </p>
+                <div className="mt-8">
+                  <GiveForm />
+                </div>
+              </>
+            )}
           </div>
+
         </div>
       </section>
 

@@ -159,17 +159,27 @@ export function GiveForm() {
         <textarea id="notes" name="notes" rows={3} className={field} />
       </div>
 
+      {error && (
+        <p role="alert" className="rounded-sm border-2 border-gold px-4 py-3 text-lg font-semibold">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-sm bg-gold px-8 py-5 font-display text-2xl font-semibold text-gold-foreground transition-opacity hover:opacity-90"
+        disabled={busy}
+        className="w-full rounded-sm bg-gold px-8 py-5 font-display text-2xl font-semibold text-gold-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        {freq === "monthly"
-          ? `Give $${chosen || "—"} every month`
-          : `Give $${chosen || "—"} one time`}
+        {busy
+          ? "Opening secure checkout…"
+          : freq === "monthly"
+            ? `Give $${chosen || "—"} every month`
+            : `Give $${chosen || "—"} one time`}
       </button>
       <p className="text-lg leading-relaxed">
-        Your card is not charged on this page. We will contact you personally to set up your gift.
+        You'll finish on Stripe's secure page. We never see or store your card number.
       </p>
+
     </form>
   );
 }

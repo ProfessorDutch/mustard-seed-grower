@@ -14,7 +14,12 @@ export const createGiftCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => giftSchema.parse(data))
   .handler(async ({ data }) => {
     const secretKey = process.env["STRIPE_SECRET_KEY"];
-    if (!secretKey) throw new Error("Giving is not configured yet.");
+    if (!secretKey) {
+      throw new Error(
+        "Giving isn't connected yet: the server can't see STRIPE_SECRET_KEY. (Check /api/public/stripe-health.)",
+      );
+    }
+
 
     const origin = getRequestUrl().origin;
     const monthly = data.frequency === "monthly";
@@ -51,8 +56,17 @@ export const createGiftCheckout = createServerFn({ method: "POST" })
     if (!res.ok) {
       const text = await res.text();
       console.error(`Stripe checkout failed [${res.status}]: ${text}`);
-      throw new Error("We couldn't open the secure payment page. Please try again.");
+      let detail = "";
+      try {
+        detail = (JSON.parse(text) as { error?: { message?: string } }).error?.message ?? "";
+      } catch {
+        detail = "";
+      }
+      throw new Error(
+        `Stripe rejected the request (${res.status})${detail ? `: ${detail}` : ""}`,
+      );
     }
+
 
     const session = (await res.json()) as { url?: string };
     if (!session.url) throw new Error("Stripe did not return a checkout link.");

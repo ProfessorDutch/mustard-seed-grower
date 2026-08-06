@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { readServerEnv } from "@/lib/env.server";
 
 /**
  * Deployment diagnostic for giving.
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/api/public/stripe-health")({
   server: {
     handlers: {
       GET: async () => {
-        const key = process.env["STRIPE_SECRET_KEY"];
+        const key = readServerEnv("STRIPE_SECRET_KEY");
 
         const result: Record<string, unknown> = {
           runtime: typeof navigator !== "undefined" ? navigator.userAgent : "node",

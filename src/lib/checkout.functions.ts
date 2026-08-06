@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequestUrl } from "@tanstack/react-start/server";
 import { z } from "zod";
+import { readServerEnv } from "./env.server";
 
 const giftSchema = z.object({
   amount: z.number().int().min(1).max(1_000_000),
@@ -13,7 +14,7 @@ const giftSchema = z.object({
 export const createGiftCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => giftSchema.parse(data))
   .handler(async ({ data }) => {
-    const secretKey = process.env["STRIPE_SECRET_KEY"];
+    const secretKey = readServerEnv("STRIPE_SECRET_KEY");
     if (!secretKey) {
       throw new Error(
         "Giving isn't connected yet: the server can't see STRIPE_SECRET_KEY. (Check /api/public/stripe-health.)",

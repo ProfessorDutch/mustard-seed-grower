@@ -1,4 +1,6 @@
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { createGiftCheckout } from "@/lib/checkout.functions";
 
 const PRESETS: Record<"monthly" | "once", number[]> = {
   monthly: [25, 50, 100, 250],
@@ -9,32 +11,46 @@ export function GiveForm() {
   const [freq, setFreq] = useState<"monthly" | "once">("monthly");
   const [amount, setAmount] = useState<number | "custom">(50);
   const [custom, setCustom] = useState("");
-  const [sent, setSent] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const startCheckout = useServerFn(createGiftCheckout);
 
   const presets = PRESETS[freq];
   const chosen = amount === "custom" ? custom : String(amount);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    const form = new FormData(e.currentTarget);
+    const dollars = Math.round(Number(chosen));
+    if (!Number.isFinite(dollars) || dollars < 1) {
+      setError("Please enter a gift amount of at least $1.");
+      return;
+    }
+    setError(null);
+    setBusy(true);
+    try {
+      const { url } = await startCheckout({
+        data: {
+          amount: dollars,
+          frequency: freq,
+          name: String(form.get("name") ?? ""),
+          email: String(form.get("email") ?? ""),
+          notes: String(form.get("notes") ?? "") || undefined,
+        },
+      });
+      window.location.href = url;
+    } catch (err) {
+      setBusy(false);
+      setError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+    }
   };
-
-  if (sent) {
-    return (
-      <div className="rounded-sm border-2 border-soil-foreground/25 p-7">
-        <p className="display-md">Thank you.</p>
-        <p className="mt-3 text-xl leading-relaxed">
-          {chosen ? `$${chosen} ` : ""}
-          {freq === "monthly" ? "every month" : "one time"}. Someone from The Mustard Seed will call
-          or email you personally to finish setting this up.
-        </p>
-      </div>
-    );
-  }
 
   const label = "mb-2 block text-lg font-semibold";
   const field =
     "w-full rounded-sm border-2 border-forest-foreground/35 bg-transparent px-4 py-4 text-xl outline-none placeholder:text-forest-foreground/50 focus:border-gold";
+
 
   return (
     <form onSubmit={onSubmit} className="space-y-8">
@@ -143,17 +159,27 @@ export function GiveForm() {
         <textarea id="notes" name="notes" rows={3} className={field} />
       </div>
 
+      {error && (
+        <p role="alert" className="rounded-sm border-2 border-gold px-4 py-3 text-lg font-semibold">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-sm bg-gold px-8 py-5 font-display text-2xl font-semibold text-gold-foreground transition-opacity hover:opacity-90"
+        disabled={busy}
+        className="w-full rounded-sm bg-gold px-8 py-5 font-display text-2xl font-semibold text-gold-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        {freq === "monthly"
-          ? `Give $${chosen || "—"} every month`
-          : `Give $${chosen || "—"} one time`}
+        {busy
+          ? "Opening secure checkout…"
+          : freq === "monthly"
+            ? `Give $${chosen || "—"} every month`
+            : `Give $${chosen || "—"} one time`}
       </button>
       <p className="text-lg leading-relaxed">
-        Your card is not charged on this page. We will contact you personally to set up your gift.
+        You'll finish on Stripe's secure page. We never see or store your card number.
       </p>
+
     </form>
   );
 }

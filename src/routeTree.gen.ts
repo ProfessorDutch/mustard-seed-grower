@@ -21,6 +21,7 @@ import { Route as StoryRouteImport } from './routes/story'
 import { Route as TheGenesisMomentRouteImport } from './routes/the-genesis-moment'
 import { Route as TradesIndexRouteImport } from './routes/trades.index'
 import { Route as TradesTradeRouteImport } from './routes/trades.$trade'
+import { Route as ApiPublicStripeHealthRouteImport } from './routes/api/public/stripe-health'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +83,11 @@ const TradesTradeRoute = TradesTradeRouteImport.update({
   path: '/trades/$trade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicStripeHealthRoute = ApiPublicStripeHealthRouteImport.update({
+  id: '/api/public/stripe-health',
+  path: '/api/public/stripe-health',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
+  '/api/public/stripe-health': typeof ApiPublicStripeHealthRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades': typeof TradesIndexRoute
+  '/api/public/stripe-health': typeof ApiPublicStripeHealthRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/the-genesis-moment': typeof TheGenesisMomentRoute
   '/trades/$trade': typeof TradesTradeRoute
   '/trades/': typeof TradesIndexRoute
+  '/api/public/stripe-health': typeof ApiPublicStripeHealthRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades/'
+    | '/api/public/stripe-health'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades'
+    | '/api/public/stripe-health'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/the-genesis-moment'
     | '/trades/$trade'
     | '/trades/'
+    | '/api/public/stripe-health'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   TheGenesisMomentRoute: typeof TheGenesisMomentRoute
   TradesTradeRoute: typeof TradesTradeRoute
   TradesIndexRoute: typeof TradesIndexRoute
+  ApiPublicStripeHealthRoute: typeof ApiPublicStripeHealthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TradesTradeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/stripe-health': {
+      id: '/api/public/stripe-health'
+      path: '/api/public/stripe-health'
+      fullPath: '/api/public/stripe-health'
+      preLoaderRoute: typeof ApiPublicStripeHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   TheGenesisMomentRoute: TheGenesisMomentRoute,
   TradesTradeRoute: TradesTradeRoute,
   TradesIndexRoute: TradesIndexRoute,
+  ApiPublicStripeHealthRoute: ApiPublicStripeHealthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

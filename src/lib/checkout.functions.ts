@@ -14,7 +14,12 @@ export const createGiftCheckout = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => giftSchema.parse(data))
   .handler(async ({ data }) => {
     const secretKey = process.env["STRIPE_SECRET_KEY"];
-    if (!secretKey) throw new Error("Giving is not configured yet.");
+    if (!secretKey) {
+      throw new Error(
+        "Giving isn't connected yet: the server can't see STRIPE_SECRET_KEY. (Check /api/public/stripe-health.)",
+      );
+    }
+
 
     const origin = getRequestUrl().origin;
     const monthly = data.frequency === "monthly";

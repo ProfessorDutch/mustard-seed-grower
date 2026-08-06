@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequestUrl } from "@tanstack/react-start/server";
 import { z } from "zod";
+import { readServerEnv } from "./env.server";
 
 const giftSchema = z.object({
   amount: z.number().int().min(1).max(1_000_000),
